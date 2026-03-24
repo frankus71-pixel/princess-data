@@ -1,0 +1,101 @@
+[
+  {
+    "departamento": "RESTAURANTE - BARES - COCINA",
+    "dali": "00015224",
+    "sap": "10501783",
+    "referencia": "CARRO PORTACESTAS S/ASA PLAST. 54X54 P5015.PUJADAS",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "P5015",
+    "proveedor_casa_delfin": "0903297",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "RESTAURANTE - BARES - COCINA",
+    "dali": "00003578",
+    "sap": "10502169",
+    "referencia": "CARRO PORTACESTAS C/ASA PLAST. 54X54 P5017 PUJADAS",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "P5017",
+    "proveedor_casa_delfin": "1006286",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "RESTAURANTE - BARES - COCINA",
+    "dali": "00029662",
+    "sap": "10500482",
+    "referencia": "CESTA ABIERTA 30 COMPARTIMENTOS PUJADAS TR12H ( VASOS ZUMO )",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "TR12H",
+    "proveedor_casa_delfin": "4006131",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "RESTAURANTE - BARES - COCINA",
+    "dali": "00029548",
+    "sap": "10500530",
+    "referencia": "CESTA COPAS 25COMP.P5250 E4F2 ROJO.PUJADAS - ALTO 24 CM.",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "P5250",
+    "proveedor_casa_delfin": "1008072",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "RESTAURANTE - BARES - COCINA",
+    "dali": "00029549",
+    "sap": "10502235",
+    "referencia": "CESTA COPAS 36COMP.P5360 E4F1 MARRON CLARO.PUJADAS - ALTO 24 CM.",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "P5360",
+    "proveedor_casa_delfin": "4003794",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "RESTAURANTE - BARES - COCINA",
+    "dali": "00028192",
+    "sap": "10502220",
+    "referencia": "SUPLEMENTO CESTA 36COMP P5361F1 PUJADAS",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "P5361F1",
+    "proveedor_casa_delfin": "2006195",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "RESTAURANTE - BARES - COCINA",
+    "dali": "00015216",
+    "sap": "10501780",
+    "referencia": "CESTA CUBIERTOS 50X50CM P5000 GRIS.PUJADAS",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "P5000",
+    "proveedor_casa_delfin": "1004958",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "RESTAURANTE - BARES - COCINA",
+    "dali": "00013288",
+    "sap": "10501880",
+    "referencia": "CESTA LAVAVAJILLAS PUJADAS 16 COMP. PUJADAS P5160",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "P5160",
+    "proveedor_casa_delfin": "4005249",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "RESTAURANTE - BARES - COCINA",
+    "dali": "00013290",
+    "sap": "10501882",
+    "referencia": "CESTA PARA BANDEJAS Y PLATOS 50X50CM PUJADAS P5003",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "P5003",
+    "proveedor_casa_delfin": "1004957",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  }
+]
