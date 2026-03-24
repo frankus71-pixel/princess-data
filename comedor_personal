@@ -1,0 +1,35 @@
+[
+  {
+    "departamento": "COMEDOR PERSONAL",
+    "dali": "00028151",
+    "sap": "10500914",
+    "referencia": "PARMA PLATO HONDO 22,5 X 22,5 CM - HAPB1001 - BORMIOLI",
+    "fabricante": "BORMIOLI",
+    "codigo_fabrica": "HAPB1001",
+    "proveedor_casa_delfin": "4004339",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "COMEDOR PERSONAL",
+    "dali": "00028150",
+    "sap": "10500913",
+    "referencia": "PARMA PLATO LLANO 27X 27 CM - HAPB1002 - BORMIOLI",
+    "fabricante": "BORMIOLI",
+    "codigo_fabrica": "HAPB1002",
+    "proveedor_casa_delfin": "4004338",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "COMEDOR PERSONAL",
+    "dali": "00028152",
+    "sap": "10500915",
+    "referencia": "PINTA VASO SIDRA 36CL - ARCOROC",
+    "fabricante": "ARCOROC",
+    "codigo_fabrica": "ARC157",
+    "proveedor_casa_delfin": "0925048",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  }
+]
