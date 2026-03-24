@@ -1,0 +1,77 @@
+[
+  {
+    "nombre": "BARES",
+    "archivo": "bares.json",
+    "total": 85
+  },
+  {
+    "nombre": "BARES - MINIBARES",
+    "archivo": "bares__minibares.json",
+    "total": 1
+  },
+  {
+    "nombre": "COCINA",
+    "archivo": "cocina.json",
+    "total": 392
+  },
+  {
+    "nombre": "COMEDOR PERSONAL",
+    "archivo": "comedor_personal.json",
+    "total": 3
+  },
+  {
+    "nombre": "COMEDOR PERSONAL - RESTAURANTE",
+    "archivo": "comedor_personal__restaurante.json",
+    "total": 3
+  },
+  {
+    "nombre": "COMEDOR PERSONAL - RESTAURANTE - BARES - PISOS",
+    "archivo": "comedor_personal__restaurante__bares__pisos.json",
+    "total": 1
+  },
+  {
+    "nombre": "ECONOMATO",
+    "archivo": "economato.json",
+    "total": 1
+  },
+  {
+    "nombre": "PISOS",
+    "archivo": "pisos.json",
+    "total": 2
+  },
+  {
+    "nombre": "RESTAURANTE",
+    "archivo": "restaurante.json",
+    "total": 44
+  },
+  {
+    "nombre": "RESTAURANTE - BARES",
+    "archivo": "restaurante__bares.json",
+    "total": 24
+  },
+  {
+    "nombre": "RESTAURANTE - BARES - COCINA",
+    "archivo": "restaurante__bares__cocina.json",
+    "total": 9
+  },
+  {
+    "nombre": "RESTAURANTE - BARES - COCINA - PISOS",
+    "archivo": "restaurante__bares__cocina__pisos.json",
+    "total": 3
+  },
+  {
+    "nombre": "RESTAURANTE - COCINA",
+    "archivo": "restaurante__cocina.json",
+    "total": 4
+  },
+  {
+    "nombre": "RESTAURANTE - TEMATICOS",
+    "archivo": "restaurante__tematicos.json",
+    "total": 2
+  },
+  {
+    "nombre": "TEMATICOS",
+    "archivo": "tematicos.json",
+    "total": 75
+  }
+]
