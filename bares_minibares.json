@@ -1,10 +1,12 @@
 [
   {
-    "departamento": "BARES - MINIBARES",
+    "id": 550,
     "dali": "00028314",
     "sap": "10500904",
+    "imagen": "https://raw.githubusercontent.com/frankus71-pixel/princess-data/main/00028314.jpg",
     "referencia": "VASO BAJO AIALA 30CL V0156.HOSTELVIA",
     "fabricante": "VICRILA",
+    "departamento": "BARES - MINIBARES",
     "codigo_fabrica": "V0156",
     "proveedor_casa_delfin": "1008680",
     "proveedor_pilsa": "",

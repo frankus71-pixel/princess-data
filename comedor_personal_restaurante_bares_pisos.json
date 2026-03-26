@@ -1,10 +1,12 @@
 [
   {
-    "departamento": "COMEDOR PERSONAL - RESTAURANTE - BARES - PISOS",
+    "id": 297,
     "dali": "00025803",
     "sap": "10501176",
+    "imagen": "https://raw.githubusercontent.com/frankus71-pixel/princess-data/main/00025803.jpg",
     "referencia": "CUCHARA CAFÉ CON LECHE ECONOMICA 1001 COMAS",
     "fabricante": "COMAS",
+    "departamento": "COMEDOR PERSONAL - \nRESTAURANTE - BARES - PISOS",
     "codigo_fabrica": "1001",
     "proveedor_casa_delfin": "0516004",
     "proveedor_pilsa": "",

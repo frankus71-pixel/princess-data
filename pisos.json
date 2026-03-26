@@ -1,21 +1,25 @@
 [
   {
-    "departamento": "PISOS",
+    "id": 16,
     "dali": "00019751",
     "sap": "10501523",
+    "imagen": "https://raw.githubusercontent.com/frankus71-pixel/princess-data/main/00019751.jpg",
     "referencia": "BANQUET TAZA TE 20 CL. - BACU20 RAK (PISOS)",
     "fabricante": "RAK",
+    "departamento": "PISOS",
     "codigo_fabrica": "BACU20",
     "proveedor_casa_delfin": "400165",
     "proveedor_pilsa": "",
     "cantidad": ""
   },
   {
-    "departamento": "PISOS",
+    "id": 557,
     "dali": "00007415",
     "sap": "10500155",
-    "referencia": "VASO ISLANDE 20 CL 20FB - ARCOROC 9437130 - PISOS",
+    "imagen": "https://raw.githubusercontent.com/frankus71-pixel/princess-data/main/00007415.jpg",
+    "referencia": "VASO ISLANDE 20 CL 20FB  - ARCOROC 9437130 - PISOS",
     "fabricante": "ARCOROC",
+    "departamento": "PISOS",
     "codigo_fabrica": "9437130",
     "proveedor_casa_delfin": "0928123",
     "proveedor_pilsa": "",
