@@ -1,0 +1,79 @@
+[
+  {
+    "departamento": "COMEDOR PERSONAL - \nRESTAURANTE - BARES - PISOS",
+    "dali": "00025803",
+    "sap": "10501176",
+    "referencia": "CUCHARA CAFÉ CON LECHE ECONOMICA 1001 COMAS",
+    "fabricante": "COMAS",
+    "codigo_fabrica": "1001",
+    "proveedor_casa_delfin": "0516004",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "COMEDOR PERSONAL",
+    "dali": "00028151",
+    "sap": "10500914",
+    "referencia": "PARMA PLATO HONDO 22,5 X 22,5 CM - HAPB1001 - BORMIOLI",
+    "fabricante": "BORMIOLI",
+    "codigo_fabrica": "HAPB1001",
+    "proveedor_casa_delfin": "4004339",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "COMEDOR PERSONAL",
+    "dali": "00028150",
+    "sap": "10500913",
+    "referencia": "PARMA PLATO LLANO 27X 27 CM - HAPB1002 - BORMIOLI",
+    "fabricante": "BORMIOLI",
+    "codigo_fabrica": "HAPB1002",
+    "proveedor_casa_delfin": "4004338",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "COMEDOR PERSONAL",
+    "dali": "00028152",
+    "sap": "10500915",
+    "referencia": "PINTA VASO SIDRA 36CL - ARCOROC",
+    "fabricante": "ARCOROC",
+    "codigo_fabrica": "ARC157",
+    "proveedor_casa_delfin": "0925048",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "COMEDOR PERSONAL - \nRESTAURANTE",
+    "dali": "00026261",
+    "sap": "10501084",
+    "referencia": "PISA CUCHARA DE MESA 21CM",
+    "fabricante": "BRA/BRAMONIX",
+    "codigo_fabrica": "",
+    "proveedor_casa_delfin": "2002616",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "COMEDOR PERSONAL - \nRESTAURANTE",
+    "dali": "00026263",
+    "sap": "10501086",
+    "referencia": "PISA CUCHILLO DE MESA 23.4CM",
+    "fabricante": "BRA/BRAMONIX",
+    "codigo_fabrica": "",
+    "proveedor_casa_delfin": "2002614",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  },
+  {
+    "departamento": "COMEDOR PERSONAL - \nRESTAURANTE",
+    "dali": "00026262",
+    "sap": "10501085",
+    "referencia": "PISA TENEDOR DE MESA 21CM",
+    "fabricante": "BRA/BRAMONIX",
+    "codigo_fabrica": "",
+    "proveedor_casa_delfin": "2002615",
+    "proveedor_pilsa": "",
+    "cantidad": ""
+  }
+]
