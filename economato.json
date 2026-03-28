@@ -1,0 +1,16 @@
+[
+  {
+    "id": 25,
+    "departamento": "ECONOMATO",
+    "dali": "00023074",
+    "sap": "10900163",
+    "imagen": "https://raw.githubusercontent.com/frankus71-pixel/princess-data/main/images/00023074.jpg",
+    "referencia": "CARRO CARGAS PESADAS P8057 57X90X107 CM MAX 350KG",
+    "fabricante": "PUJADAS",
+    "codigo_fabrica": "P8057",
+    "proveedor_casa_delfin": "0555007",
+    "proveedor_pilsa": "",
+    "cantidad": "",
+    "archivoOrigen": "economato.json"
+  }
+]
