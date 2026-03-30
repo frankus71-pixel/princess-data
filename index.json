@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "BARES",
+    "archivo": "bares.json",
+    "total": 120
+  },
+  {
+    "nombre": "COCINA",
+    "archivo": "cocina.json",
+    "total": 406
+  },
+  {
+    "nombre": "COMEDOR PERSONAL",
+    "archivo": "comedor_personal.json",
+    "total": 7
+  },
+  {
+    "nombre": "ECONOMATO",
+    "archivo": "economato.json",
+    "total": 1
+  },
+  {
+    "nombre": "PISOS",
+    "archivo": "pisos.json",
+    "total": 6
+  },
+  {
+    "nombre": "RESTAURANTE",
+    "archivo": "restaurante.json",
+    "total": 87
+  },
+  {
+    "nombre": "RESTAURANTE - BARES",
+    "archivo": "restaurante_bares.json",
+    "total": 34
+  },
+  {
+    "nombre": "TEMÁTICOS",
+    "archivo": "tematicos.json",
+    "total": 77
+  }
+]
