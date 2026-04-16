@@ -4,74 +4,58 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dosier · Princess Hotels</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --beige:       #FAF7F2;
-  --beige-mid:   #F0EBE0;
-  --beige-dark:  #D4C4A8;
-  --marron:      #5C3D1E;
-  --marron-mid:  #8B6914;
-  --marron-light:#C49A3C;
-  --oro:         #D4A843;
-  --verde:       #2D6A4F;
-  --rojo:        #C0392B;
-  --texto:       #1A1A1A;
-  --texto-suave: #6B5B3E;
-  --blanco:      #FFFFFF;
-  --sombra:      0 2px 12px rgba(92,61,30,0.10);
-  --sombra-hover:0 6px 24px rgba(92,61,30,0.18);
+  --marron-oscuro: #2C1810;
+  --marron-medio: #4A2C1A;
+  --marron-card:  #3D2210;
+  --oro:          #C9A84C;
+  --oro-claro:    #E8C97A;
+  --oro-hover:    #D4B86A;
+  --beige:        #FAF7F2;
+  --beige-mid:    #F0EBE0;
+  --beige-dark:   #D4C4A8;
+  --texto:        #1A1A1A;
+  --texto-suave:  #6B5B3E;
+  --blanco:       #FFFFFF;
+  --verde:        #2D6A4F;
+  --rojo:         #C0392B;
+  --sombra:       0 4px 20px rgba(0,0,0,0.25);
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--beige);
-  color: var(--texto);
-  min-height: 100vh;
-}
+body { font-family: 'DM Sans', sans-serif; background: var(--marron-oscuro); color: var(--texto); min-height: 100vh; }
 
 /* ── HEADER ── */
 .header {
-  background: var(--marron);
-  padding: 0 24px;
-  height: 64px;
+  background: var(--marron-oscuro);
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  padding: 0 28px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
 }
-.header-logo {
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--oro);
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-.header-logo span { color: #fff; font-weight: 400; }
-.header-user {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #fff;
-  font-size: 13px;
-}
-.header-user strong { color: var(--oro); }
+.header-logo img { height: 38px; filter: brightness(1.1); }
+.header-right { display: flex; align-items: center; gap: 16px; }
+.header-user-info { text-align: right; }
+.header-user-nombre { color: var(--oro-claro); font-size: 13px; font-weight: 600; }
+.header-user-sub { color: rgba(255,255,255,0.5); font-size: 11px; }
 .btn-salir {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.5);
+  color: var(--oro);
+  padding: 7px 16px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
-  transition: background 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
 }
-.btn-salir:hover { background: rgba(255,255,255,0.25); }
+.btn-salir:hover { background: rgba(201,168,76,0.15); border-color: var(--oro); }
 
 /* ── PANTALLAS ── */
 .pantalla { display: none; }
@@ -83,166 +67,149 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--marron) 0%, #3D2210 100%);
+  background: linear-gradient(160deg, #2C1810 0%, #1A0F08 60%, #0F0806 100%);
+  padding: 20px;
 }
 .login-card {
-  background: var(--blanco);
-  border-radius: 16px;
-  padding: 40px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 20px;
+  padding: 48px 40px;
   width: 100%;
-  max-width: 420px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  max-width: 440px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
 }
-.login-logo {
+.login-logo { text-align: center; margin-bottom: 12px; }
+.login-logo img { height: 52px; }
+.login-subtitulo {
   text-align: center;
-  margin-bottom: 32px;
-}
-.login-logo h1 {
+  color: var(--oro);
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-  color: var(--marron);
-  font-weight: 700;
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 8px;
 }
-.login-logo p {
-  color: var(--texto-suave);
-  font-size: 13px;
-  margin-top: 4px;
+.login-dep {
+  text-align: center;
+  color: rgba(255,255,255,0.35);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
 }
 .form-group { margin-bottom: 16px; }
 .form-group label {
   display: block;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  color: var(--texto-suave);
-  margin-bottom: 6px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 7px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 .form-group input,
 .form-group select {
   width: 100%;
-  padding: 12px 14px;
-  border: 1.5px solid var(--beige-dark);
-  border-radius: 8px;
+  padding: 13px 16px;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 10px;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  background: var(--beige);
-  color: var(--texto);
-  transition: border-color 0.2s;
+  background: rgba(255,255,255,0.06);
+  color: var(--blanco);
+  transition: border-color 0.2s, background 0.2s;
   outline: none;
 }
+.form-group input::placeholder { color: rgba(255,255,255,0.25); }
+.form-group select option { background: var(--marron-card); color: #fff; }
 .form-group input:focus,
-.form-group select:focus { border-color: var(--marron-mid); background: #fff; }
+.form-group select:focus {
+  border-color: var(--oro);
+  background: rgba(255,255,255,0.09);
+}
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.btn-primary {
+.btn-acceder {
   width: 100%;
-  padding: 14px;
-  background: var(--marron);
-  color: #fff;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--oro) 0%, #A8893A 100%);
+  color: var(--marron-oscuro);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: all 0.2s;
   margin-top: 8px;
 }
-.btn-primary:hover { background: #3D2210; }
-.btn-primary:active { transform: scale(0.98); }
-.login-admin-link {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 12px;
-  color: var(--texto-suave);
-}
-.login-admin-link a {
-  color: var(--marron-mid);
-  cursor: pointer;
-  text-decoration: underline;
-}
+.btn-acceder:hover { background: linear-gradient(135deg, var(--oro-claro) 0%, var(--oro) 100%); transform: translateY(-1px); }
+.login-admin-link { text-align: center; margin-top: 20px; }
+.login-admin-link a { color: rgba(255,255,255,0.3); font-size: 12px; cursor: pointer; text-decoration: none; transition: color 0.2s; }
+.login-admin-link a:hover { color: var(--oro); }
+
+/* ── CONTENIDO PRINCIPAL ── */
+.app-body { background: var(--beige); min-height: calc(100vh - 68px); }
 
 /* ── NAV TABS ── */
 .nav-tabs {
-  background: var(--blanco);
-  border-bottom: 2px solid var(--beige-mid);
+  background: var(--marron-card);
   display: flex;
-  gap: 0;
-  padding: 0 24px;
+  padding: 0 28px;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
 }
 .nav-tab {
-  padding: 14px 20px;
+  padding: 16px 20px;
   font-size: 13px;
-  font-weight: 600;
-  color: var(--texto-suave);
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
   cursor: pointer;
   border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+  transition: all 0.2s;
   white-space: nowrap;
 }
-.nav-tab:hover { color: var(--marron); }
-.nav-tab.activo { color: var(--marron); border-bottom-color: var(--marron); }
+.nav-tab:hover { color: var(--oro-claro); }
+.nav-tab.activo { color: var(--oro); border-bottom-color: var(--oro); }
 
-/* ── CONTENIDO PRINCIPAL ── */
-.main-content { padding: 24px; max-width: 1400px; margin: 0 auto; }
-
-/* ── DEPARTAMENTOS GRID ── */
+/* ── MAIN CONTENT ── */
+.main-content { padding: 28px; max-width: 1400px; margin: 0 auto; }
 .seccion-titulo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  color: var(--marron);
-  margin-bottom: 6px;
+  font-size: 26px;
+  color: var(--marron-oscuro);
+  margin-bottom: 4px;
+  font-weight: 700;
 }
-.seccion-sub {
-  color: var(--texto-suave);
-  font-size: 13px;
-  margin-bottom: 20px;
-}
+.seccion-sub { color: var(--texto-suave); font-size: 13px; margin-bottom: 24px; }
+
+/* ── DEPARTAMENTOS ── */
 .dep-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px;
   margin-bottom: 32px;
 }
 .dep-card {
   background: var(--blanco);
   border: 1.5px solid var(--beige-mid);
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 14px;
+  padding: 22px 16px;
   cursor: pointer;
   transition: all 0.2s;
   text-align: center;
-  box-shadow: var(--sombra);
+  box-shadow: 0 2px 8px rgba(44,24,16,0.06);
 }
-.dep-card:hover {
-  border-color: var(--marron-mid);
-  box-shadow: var(--sombra-hover);
-  transform: translateY(-2px);
-}
-.dep-card.seleccionado {
-  border-color: var(--marron);
-  background: #FDF8F0;
-}
-.dep-card-icon { font-size: 28px; margin-bottom: 8px; }
-.dep-card-nombre {
-  font-weight: 600;
-  font-size: 13px;
-  color: var(--texto);
-}
-.dep-card-total {
-  font-size: 11px;
-  color: var(--texto-suave);
-  margin-top: 4px;
-}
+.dep-card:hover { border-color: var(--oro); box-shadow: 0 6px 20px rgba(44,24,16,0.12); transform: translateY(-2px); }
+.dep-card.seleccionado { border-color: var(--marron-oscuro); background: #FDF8F0; box-shadow: 0 4px 16px rgba(44,24,16,0.15); }
+.dep-icon { font-size: 30px; margin-bottom: 10px; }
+.dep-nombre { font-weight: 600; font-size: 13px; color: var(--texto); }
+.dep-total { font-size: 11px; color: var(--texto-suave); margin-top: 4px; }
 
 /* ── BUSCADOR ── */
-.buscador-wrap {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-  align-items: center;
-}
+.buscador-wrap { display: flex; gap: 10px; margin-bottom: 18px; }
 .buscador-input {
   flex: 1;
   padding: 12px 16px;
@@ -254,9 +221,9 @@ body {
   outline: none;
   transition: border-color 0.2s;
 }
-.buscador-input:focus { border-color: var(--marron-mid); }
-.btn-secundario {
-  padding: 12px 20px;
+.buscador-input:focus { border-color: var(--oro); }
+.btn-sec {
+  padding: 12px 18px;
   background: var(--blanco);
   border: 1.5px solid var(--beige-dark);
   border-radius: 8px;
@@ -268,120 +235,83 @@ body {
   transition: all 0.2s;
   white-space: nowrap;
 }
-.btn-secundario:hover { border-color: var(--marron-mid); color: var(--marron); }
-.btn-verde {
+.btn-sec:hover { border-color: var(--oro); color: var(--marron-oscuro); }
+.btn-oro {
   padding: 12px 20px;
-  background: var(--verde);
+  background: linear-gradient(135deg, var(--marron-oscuro), var(--marron-card));
   border: none;
   border-radius: 8px;
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 600;
-  color: #fff;
+  color: var(--oro);
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
   white-space: nowrap;
 }
-.btn-verde:hover { background: #1e4f3a; }
-.btn-verde:disabled { background: #aaa; cursor: not-allowed; }
+.btn-oro:hover { background: var(--marron-card); }
+.btn-oro:disabled { background: #ccc; color: #888; cursor: not-allowed; }
 
-/* ── ARTICULOS TABLA ── */
-.articulos-info {
-  font-size: 12px;
-  color: var(--texto-suave);
-  margin-bottom: 12px;
-}
-.articulos-tabla {
+/* ── TABLA ARTÍCULOS ── */
+.layout-catalogo { display: grid; grid-template-columns: 1fr 300px; gap: 24px; align-items: start; }
+@media (max-width: 960px) { .layout-catalogo { grid-template-columns: 1fr; } }
+.articulos-info { font-size: 12px; color: var(--texto-suave); margin-bottom: 10px; }
+.art-tabla {
   width: 100%;
   border-collapse: collapse;
   background: var(--blanco);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--sombra);
+  box-shadow: 0 2px 12px rgba(44,24,16,0.08);
 }
-.articulos-tabla th {
-  background: var(--marron);
-  color: #fff;
+.art-tabla th {
+  background: var(--marron-oscuro);
+  color: var(--oro);
   padding: 12px 10px;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
   text-align: left;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
-.articulos-tabla td {
+.art-tabla td {
   padding: 10px;
   border-bottom: 1px solid var(--beige-mid);
   font-size: 13px;
   vertical-align: middle;
 }
-.articulos-tabla tr:last-child td { border-bottom: none; }
-.articulos-tabla tr:hover td { background: #FDFAF5; }
-.art-img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  border-radius: 6px;
-  background: var(--beige);
-  border: 1px solid var(--beige-mid);
-}
-.art-img-placeholder {
-  width: 48px;
-  height: 48px;
-  background: var(--beige-mid);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-}
-.badge {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 700;
-}
+.art-tabla tr:last-child td { border-bottom: none; }
+.art-tabla tr:hover td { background: #FDFAF5; }
+.art-img { width: 50px; height: 50px; object-fit: contain; border-radius: 6px; background: var(--beige); border: 1px solid var(--beige-mid); }
+.art-img-ph { width: 50px; height: 50px; background: var(--beige-mid); border-radius: 6px; display: none; align-items: center; justify-content: center; font-size: 18px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; }
 .badge-si { background: #D4EDDA; color: #155724; }
 .badge-no { background: #F8D7DA; color: #721C24; }
 .cant-input {
-  width: 64px;
-  padding: 6px 8px;
+  width: 64px; padding: 7px 8px;
   border: 1.5px solid var(--beige-dark);
-  border-radius: 6px;
-  text-align: center;
+  border-radius: 6px; text-align: center;
   font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--marron-mid);
-  background: var(--beige);
-  outline: none;
+  font-size: 14px; font-weight: 700;
+  color: var(--marron-oscuro); background: var(--beige); outline: none;
 }
-.cant-input:focus { border-color: var(--marron-mid); background: #fff; }
-.cant-input.tiene-valor { border-color: var(--marron); background: #FDF0D5; }
+.cant-input:focus { border-color: var(--oro); background: #fff; }
+.cant-input.activo { border-color: var(--marron-oscuro); background: #FDF0D5; }
 
-/* ── PEDIDO SIDEBAR ── */
-.layout-catalogo {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 24px;
-  align-items: start;
-}
-@media (max-width: 900px) {
-  .layout-catalogo { grid-template-columns: 1fr; }
-}
+/* ── SIDEBAR PEDIDO ── */
 .pedido-sidebar {
   background: var(--blanco);
-  border-radius: 12px;
+  border-radius: 14px;
   border: 1.5px solid var(--beige-dark);
-  box-shadow: var(--sombra);
+  box-shadow: 0 4px 20px rgba(44,24,16,0.1);
   position: sticky;
   top: 90px;
   overflow: hidden;
+  display: none;
 }
-.pedido-sidebar-header {
-  background: var(--marron);
-  color: #fff;
+.pedido-head {
+  background: var(--marron-oscuro);
+  color: var(--oro);
   padding: 16px 20px;
   font-weight: 700;
   font-size: 14px;
@@ -389,72 +319,30 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.pedido-sidebar-badge {
+.pedido-badge {
   background: var(--oro);
-  color: var(--marron);
+  color: var(--marron-oscuro);
   border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 800;
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800;
 }
-.pedido-sidebar-body { padding: 16px; max-height: 400px; overflow-y: auto; }
-.pedido-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--beige-mid);
-  gap: 8px;
-}
+.pedido-body { padding: 14px; max-height: 380px; overflow-y: auto; }
+.pedido-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--beige-mid); gap: 8px; }
 .pedido-item:last-child { border-bottom: none; }
-.pedido-item-nombre {
-  font-size: 12px;
-  color: var(--texto);
-  flex: 1;
-  line-height: 1.4;
-}
-.pedido-item-cant {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--marron);
-  white-space: nowrap;
-}
-.pedido-sidebar-footer { padding: 16px; border-top: 1px solid var(--beige-mid); }
-.pedido-total {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  color: var(--texto-suave);
-  margin-bottom: 12px;
-}
-.pedido-total strong { color: var(--marron); font-size: 15px; }
-.pedido-vacio {
-  text-align: center;
-  padding: 24px 16px;
-  color: var(--texto-suave);
-  font-size: 13px;
-}
+.pedido-item-ref { font-size: 12px; color: var(--texto); flex: 1; line-height: 1.4; }
+.pedido-item-cant { font-size: 13px; font-weight: 700; color: var(--marron-oscuro); white-space: nowrap; }
+.pedido-footer { padding: 16px; border-top: 1px solid var(--beige-mid); }
+.pedido-total-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--texto-suave); margin-bottom: 14px; }
+.pedido-total-row strong { color: var(--marron-oscuro); font-size: 16px; }
+.pedido-vacio { text-align: center; padding: 28px 16px; color: var(--texto-suave); font-size: 13px; }
 
-/* ── HISTORIAL ── */
-.filtros-wrap {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.filtros-wrap select,
-.filtros-wrap input {
-  padding: 10px 14px;
-  border: 1.5px solid var(--beige-dark);
-  border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  background: var(--blanco);
-  outline: none;
+/* ── PEDIDOS LISTA ── */
+.filtros-wrap { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.filtros-wrap select, .filtros-wrap input[type=date] {
+  padding: 10px 14px; border: 1.5px solid var(--beige-dark);
+  border-radius: 8px; font-family: 'DM Sans', sans-serif;
+  font-size: 13px; background: var(--blanco); outline: none; color: var(--texto);
 }
 .pedidos-lista { display: flex; flex-direction: column; gap: 12px; }
 .pedido-card {
@@ -462,148 +350,91 @@ body {
   border-radius: 12px;
   border: 1.5px solid var(--beige-mid);
   padding: 20px;
-  box-shadow: var(--sombra);
+  box-shadow: 0 2px 8px rgba(44,24,16,0.06);
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 16px;
   align-items: start;
 }
-.pedido-card-meta { font-size: 12px; color: var(--texto-suave); margin-top: 4px; }
-.pedido-card-titulo {
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--marron);
-}
-.pedido-card-articulos {
-  font-size: 12px;
-  color: var(--texto-suave);
-  margin-top: 8px;
-  line-height: 1.6;
-}
-.estado-badge {
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+.pc-titulo { font-weight: 700; font-size: 15px; color: var(--marron-oscuro); }
+.pc-meta { font-size: 12px; color: var(--texto-suave); margin-top: 4px; }
+.pc-arts { font-size: 12px; color: var(--texto-suave); margin-top: 8px; line-height: 1.7; }
+.pc-acciones { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.estado-badge { padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
 .estado-pendiente { background: #FFF3CD; color: #856404; }
 .estado-procesado { background: #D4EDDA; color: #155724; }
 .estado-rechazado { background: #F8D7DA; color: #721C24; }
-.pedido-card-acciones { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.btn-mini { padding: 6px 12px; background: var(--marron-oscuro); color: var(--oro); border: none; border-radius: 6px; font-size: 12px; cursor: pointer; transition: background 0.2s; }
+.btn-mini:hover { background: var(--marron-card); }
+.select-estado { padding: 6px 10px; border: 1.5px solid var(--beige-dark); border-radius: 6px; font-size: 12px; cursor: pointer; font-family: 'DM Sans', sans-serif; background: var(--blanco); }
+
+/* ── STATS ── */
+.stats-grid { display: flex; gap: 14px; margin-bottom: 24px; flex-wrap: wrap; }
+.stat-card { background: var(--blanco); border-radius: 10px; padding: 18px 22px; border: 1.5px solid var(--beige-mid); min-width: 130px; box-shadow: 0 2px 8px rgba(44,24,16,0.06); }
+.stat-icon { font-size: 22px; }
+.stat-val { font-size: 26px; font-weight: 800; margin: 4px 0; }
+.stat-label { font-size: 11px; color: var(--texto-suave); }
 
 /* ── ADMIN LOGIN ── */
-.admin-login-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 200;
-  align-items: center;
-  justify-content: center;
-}
-.admin-login-overlay.visible { display: flex; }
-.admin-login-card {
-  background: var(--blanco);
-  border-radius: 16px;
-  padding: 32px;
-  width: 320px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-.admin-login-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  color: var(--marron);
-  margin-bottom: 20px;
-}
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 200; align-items: center; justify-content: center; }
+.overlay.visible { display: flex; }
+.overlay-card { background: var(--marron-card); border: 1px solid rgba(201,168,76,0.3); border-radius: 16px; padding: 36px; width: 320px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.overlay-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--oro); margin-bottom: 20px; }
+.overlay-card label { color: rgba(255,255,255,0.5); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 7px; }
+.overlay-card input { width: 100%; padding: 13px 16px; border: 1px solid rgba(201,168,76,0.25); border-radius: 8px; background: rgba(255,255,255,0.07); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; margin-bottom: 16px; }
+.overlay-card input:focus { border-color: var(--oro); }
 
-/* ── LOADING ── */
-.loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px;
-  color: var(--texto-suave);
-  gap: 12px;
-  font-size: 14px;
-}
-.spinner {
-  width: 24px;
-  height: 24px;
-  border: 3px solid var(--beige-dark);
-  border-top-color: var(--marron);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
+/* ── UTILS ── */
+.loading { display: flex; align-items: center; justify-content: center; padding: 60px; color: var(--texto-suave); gap: 12px; font-size: 14px; }
+.spinner { width: 22px; height: 22px; border: 3px solid var(--beige-dark); border-top-color: var(--marron-oscuro); border-radius: 50%; animation: spin 0.8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
-
-.toast {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: var(--marron);
-  color: #fff;
-  padding: 14px 20px;
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  z-index: 300;
-  transform: translateY(80px);
-  opacity: 0;
-  transition: all 0.3s;
-}
-.toast.visible { transform: translateY(0); opacity: 1; }
-.toast.exito { background: var(--verde); }
-.toast.error { background: var(--rojo); }
-
-.empty-state {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--texto-suave);
-}
+.empty-state { text-align: center; padding: 60px 20px; color: var(--texto-suave); }
 .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
-.empty-state p { font-size: 14px; }
+.toast { position: fixed; bottom: 24px; right: 24px; padding: 14px 22px; border-radius: 10px; font-size: 13px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,0.25); z-index: 300; transform: translateY(80px); opacity: 0; transition: all 0.3s; }
+.toast.visible { transform: translateY(0); opacity: 1; }
+.toast-ok { background: var(--verde); color: #fff; }
+.toast-err { background: var(--rojo); color: #fff; }
+.toast-info { background: var(--marron-oscuro); color: var(--oro); }
 </style>
 </head>
 <body>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<!-- ADMIN LOGIN OVERLAY -->
-<div class="admin-login-overlay" id="adminOverlay">
-  <div class="admin-login-card">
+<!-- ADMIN OVERLAY -->
+<div class="overlay" id="adminOverlay">
+  <div class="overlay-card">
     <h3>🔐 Acceso Admin</h3>
-    <div class="form-group">
-      <label>Contraseña</label>
-      <input type="password" id="adminPass" placeholder="••••••••">
-    </div>
-    <button class="btn-primary" onclick="verificarAdmin()">Entrar como Admin</button>
-    <button class="btn-secundario" style="width:100%;margin-top:8px" onclick="cerrarAdminOverlay()">Cancelar</button>
+    <label>Contraseña</label>
+    <input type="password" id="adminPass" placeholder="••••••••">
+    <button class="btn-acceder" onclick="verificarAdmin()">Acceder</button>
+    <button class="btn-sec" style="width:100%;margin-top:8px" onclick="cerrarOverlay()">Cancelar</button>
   </div>
 </div>
 
 <!-- HEADER -->
 <div class="header" id="header" style="display:none">
-  <div class="header-logo">Dosier <span>· Princess Hotels</span></div>
-  <div class="header-user">
-    <span id="headerInfo"></span>
+  <div class="header-logo">
+    <img src="https://raw.githubusercontent.com/centralcomprasprincesscanarias/princess-data/main/logo_princess.png" alt="Princess Hotels">
+  </div>
+  <div class="header-right">
+    <div class="header-user-info">
+      <div class="header-user-nombre" id="headerNombre"></div>
+      <div class="header-user-sub" id="headerSub"></div>
+    </div>
     <button class="btn-salir" onclick="cerrarSesion()">Salir</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════════
-     PANTALLA LOGIN
-═══════════════════════════════════════════════════════════════ -->
+<!-- ══ LOGIN ══ -->
 <div class="pantalla activa" id="pLogin">
   <div class="login-wrap">
     <div class="login-card">
       <div class="login-logo">
-        <h1>Dosier</h1>
-        <p>Princess Hotels & Resorts · Central de Compras</p>
+        <img src="https://raw.githubusercontent.com/centralcomprasprincesscanarias/princess-data/main/logo_princess.png" alt="Princess Hotels">
       </div>
+      <div class="login-subtitulo">Dosier de Menaje</div>
+      <div class="login-dep">Departamento de Compras Canarias</div>
       <div class="form-row">
         <div class="form-group">
           <label>Nombre</label>
@@ -620,7 +451,7 @@ body {
           <option value="">Selecciona hotel...</option>
           <option>Hotel Gran Canaria Princess</option>
           <option>Hotel Taurito Princess</option>
-          <option>Hotel Mogan Princess</option>
+          <option>Hotel Mogán Princess</option>
           <option>Hotel La Palma Princess</option>
           <option>Hotel Fuerteventura Princess</option>
           <option>Hotel Jandia Princess</option>
@@ -631,7 +462,7 @@ body {
       </div>
       <div class="form-group">
         <label>Departamento</label>
-        <select id="loginDepartamento">
+        <select id="loginDep">
           <option value="">Selecciona departamento...</option>
           <option>Bares</option>
           <option>Cocina</option>
@@ -643,652 +474,366 @@ body {
           <option>Temáticos</option>
         </select>
       </div>
-      <button class="btn-primary" onclick="iniciarSesion()">Entrar</button>
-      <div class="login-admin-link">
-        <a onclick="abrirAdminOverlay()">Acceso administrador</a>
-      </div>
+      <button class="btn-acceder" onclick="iniciarSesion()">Acceder</button>
+      <div class="login-admin-link"><a onclick="abrirOverlay()">Acceso administrador</a></div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════════
-     PANTALLA PRINCIPAL
-═══════════════════════════════════════════════════════════════ -->
-<div class="pantalla" id="pPrincipal">
+<!-- ══ APP PRINCIPAL ══ -->
+<div class="pantalla" id="pApp">
   <div class="nav-tabs" id="navTabs">
-    <div class="nav-tab activo" onclick="mostrarTab('catalogo')">📦 Catálogo</div>
-    <div class="nav-tab" onclick="mostrarTab('misPedidos')">📋 Mis Pedidos</div>
-    <div class="nav-tab" id="tabAdmin" style="display:none" onclick="mostrarTab('admin')">🔐 Admin</div>
+    <div class="nav-tab activo" data-tab="catalogo" onclick="mostrarTab('catalogo')">📦 Catálogo</div>
+    <div class="nav-tab" data-tab="misPedidos" onclick="mostrarTab('misPedidos')">📋 Mis Pedidos</div>
+    <div class="nav-tab" data-tab="admin" id="tabAdminBtn" style="display:none" onclick="mostrarTab('admin')">🔐 Admin</div>
   </div>
 
-  <!-- TAB CATÁLOGO -->
-  <div id="tabCatalogo" class="main-content">
-    <h2 class="seccion-titulo">Catálogo de Artículos</h2>
-    <p class="seccion-sub" id="subtituloCatalogo">Selecciona un departamento para ver los artículos</p>
+  <div class="app-body">
 
-    <div class="dep-grid" id="depGrid">
-      <div class="loading"><div class="spinner"></div> Cargando departamentos...</div>
-    </div>
-
-    <div class="layout-catalogo">
-      <div>
-        <div class="buscador-wrap" id="buscadorWrap" style="display:none">
-          <input class="buscador-input" id="buscadorInput" placeholder="Buscar por referencia, fabricante, DALI..." oninput="filtrarArticulos()">
-          <button class="btn-secundario" onclick="limpiarBusqueda()">Limpiar</button>
-        </div>
-        <div id="articulosInfo" class="articulos-info"></div>
-        <div id="articulosContainer"></div>
-      </div>
-
-      <div class="pedido-sidebar" id="pedidoSidebar" style="display:none">
-        <div class="pedido-sidebar-header">
-          <span>🛒 Pedido actual</span>
-          <span class="pedido-sidebar-badge" id="pedidoBadge">0</span>
-        </div>
-        <div class="pedido-sidebar-body" id="pedidoItems">
-          <div class="pedido-vacio">Sin artículos aún</div>
-        </div>
-        <div class="pedido-sidebar-footer">
-          <div class="pedido-total">
-            <span>Total artículos:</span>
-            <strong id="pedidoTotal">0 uds.</strong>
+    <!-- TAB CATÁLOGO -->
+    <div id="tabCatalogo" class="main-content">
+      <h2 class="seccion-titulo">Catálogo de Artículos</h2>
+      <p class="seccion-sub" id="subCatalogo">Selecciona un departamento para ver los artículos</p>
+      <div class="dep-grid" id="depGrid"></div>
+      <div class="layout-catalogo">
+        <div>
+          <div class="buscador-wrap" id="buscadorWrap" style="display:none">
+            <input class="buscador-input" id="buscadorInput" placeholder="Buscar referencia, fabricante, DALI, SAP..." oninput="filtrar()">
+            <button class="btn-sec" onclick="limpiarBusqueda()">Limpiar</button>
           </div>
-          <button class="btn-verde" id="btnEnviarPedido" onclick="enviarPedido()" disabled>Enviar Pedido</button>
-          <button class="btn-secundario" style="width:100%;margin-top:8px" onclick="limpiarPedido()">Limpiar</button>
+          <div class="articulos-info" id="artInfo"></div>
+          <div id="artContainer"></div>
+        </div>
+        <div class="pedido-sidebar" id="pedidoSidebar">
+          <div class="pedido-head">
+            <span>🛒 Pedido actual</span>
+            <span class="pedido-badge" id="pedidoBadge">0</span>
+          </div>
+          <div class="pedido-body" id="pedidoItems">
+            <div class="pedido-vacio">Sin artículos todavía</div>
+          </div>
+          <div class="pedido-footer">
+            <div class="pedido-total-row">
+              <span>Total unidades:</span>
+              <strong id="pedidoTotal">0</strong>
+            </div>
+            <button class="btn-oro" id="btnEnviar" onclick="enviarPedido()" style="width:100%" disabled>Enviar Pedido</button>
+            <button class="btn-sec" onclick="limpiarPedido()" style="width:100%;margin-top:8px">Limpiar</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- TAB MIS PEDIDOS -->
-  <div id="tabMisPedidos" class="main-content" style="display:none">
-    <h2 class="seccion-titulo">Mis Pedidos</h2>
-    <p class="seccion-sub">Historial de pedidos realizados</p>
-    <div class="filtros-wrap">
-      <input type="date" id="filtroFechaDesde" onchange="cargarMisPedidos()">
-      <input type="date" id="filtroFechaHasta" onchange="cargarMisPedidos()">
-      <select id="filtroEstado" onchange="cargarMisPedidos()">
-        <option value="">Todos los estados</option>
-        <option value="pendiente">Pendiente</option>
-        <option value="procesado">Procesado</option>
-        <option value="rechazado">Rechazado</option>
-      </select>
+    <!-- TAB MIS PEDIDOS -->
+    <div id="tabMisPedidos" class="main-content" style="display:none">
+      <h2 class="seccion-titulo">Mis Pedidos</h2>
+      <p class="seccion-sub">Historial de pedidos realizados</p>
+      <div class="filtros-wrap">
+        <input type="date" id="mpDesde" onchange="cargarMisPedidos()">
+        <input type="date" id="mpHasta" onchange="cargarMisPedidos()">
+        <select id="mpEstado" onchange="cargarMisPedidos()">
+          <option value="">Todos los estados</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="procesado">Procesado</option>
+          <option value="rechazado">Rechazado</option>
+        </select>
+      </div>
+      <div id="misPedidosContainer"></div>
     </div>
-    <div id="misPedidosContainer"></div>
-  </div>
 
-  <!-- TAB ADMIN -->
-  <div id="tabAdmin2" class="main-content" style="display:none">
-    <h2 class="seccion-titulo">Panel de Administración</h2>
-    <p class="seccion-sub">Todos los pedidos — control total</p>
-    <div class="filtros-wrap">
-      <select id="adminFiltroHotel" onchange="cargarAdminPedidos()">
-        <option value="">Todos los hoteles</option>
-        <option>Hotel Gran Canaria Princess</option>
-        <option>Hotel Taurito Princess</option>
-        <option>Hotel Mogan Princess</option>
-        <option>Hotel La Palma Princess</option>
-        <option>Hotel Fuerteventura Princess</option>
-        <option>Hotel Jandia Princess</option>
-        <option>Hotel Beverly Hills</option>
-        <option>Hotel Santa Águeda</option>
-        <option>Central de Compras</option>
-      </select>
-      <select id="adminFiltroDep" onchange="cargarAdminPedidos()">
-        <option value="">Todos los departamentos</option>
-        <option>Bares</option>
-        <option>Cocina</option>
-        <option>Comedor Personal</option>
-        <option>Economato</option>
-        <option>Pisos</option>
-        <option>Restaurante</option>
-        <option>Restaurante - Bares</option>
-        <option>Temáticos</option>
-      </select>
-      <select id="adminFiltroEstado" onchange="cargarAdminPedidos()">
-        <option value="">Todos los estados</option>
-        <option value="pendiente">Pendiente</option>
-        <option value="procesado">Procesado</option>
-        <option value="rechazado">Rechazado</option>
-      </select>
-      <input type="date" id="adminFiltroDesde" onchange="cargarAdminPedidos()">
-      <input type="date" id="adminFiltroHasta" onchange="cargarAdminPedidos()">
+    <!-- TAB ADMIN -->
+    <div id="tabAdmin" class="main-content" style="display:none">
+      <h2 class="seccion-titulo">Panel de Administración</h2>
+      <p class="seccion-sub">Control total de todos los pedidos</p>
+      <div class="filtros-wrap">
+        <select id="aHotel" onchange="cargarAdmin()">
+          <option value="">Todos los hoteles</option>
+          <option>Hotel Gran Canaria Princess</option>
+          <option>Hotel Taurito Princess</option>
+          <option>Hotel Mogán Princess</option>
+          <option>Hotel La Palma Princess</option>
+          <option>Hotel Fuerteventura Princess</option>
+          <option>Hotel Jandia Princess</option>
+          <option>Hotel Beverly Hills</option>
+          <option>Hotel Santa Águeda</option>
+          <option>Central de Compras</option>
+        </select>
+        <select id="aDep" onchange="cargarAdmin()">
+          <option value="">Todos los departamentos</option>
+          <option>Bares</option><option>Cocina</option><option>Comedor Personal</option>
+          <option>Economato</option><option>Pisos</option><option>Restaurante</option>
+          <option>Restaurante - Bares</option><option>Temáticos</option>
+        </select>
+        <select id="aEstado" onchange="cargarAdmin()">
+          <option value="">Todos los estados</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="procesado">Procesado</option>
+          <option value="rechazado">Rechazado</option>
+        </select>
+        <input type="date" id="aDesde" onchange="cargarAdmin()">
+        <input type="date" id="aHasta" onchange="cargarAdmin()">
+      </div>
+      <div class="stats-grid" id="adminStats"></div>
+      <div id="adminContainer"></div>
     </div>
-    <div id="adminStats" style="display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap"></div>
-    <div id="adminPedidosContainer"></div>
+
   </div>
 </div>
 
 <script>
-// ══════════════════════════════════════════════════════════════
-// CONFIG
-// ══════════════════════════════════════════════════════════════
-const SUPABASE_URL  = 'https://ifiwuloipapsezmssyda.supabase.co';
-const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlmaXd1bG9pcGFwc2V6bXNzeWRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4MDA5NDgsImV4cCI6MjA5MTM3Njk0OH0.Wjs298hA8xAnIQ4IQHEq3eEfaygF-6FY_5I4i2Se3ZY';
-const GITHUB_RAW    = 'https://raw.githubusercontent.com/centralcomprasprincesscanarias/princess-data/main/';
-const ADMIN_PASS    = 'Princess2026';
+const SUPA_URL = 'https://ifiwuloipapsezmssyda.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlmaXd1bG9pcGFwc2V6bXNzeWRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4MDA5NDgsImV4cCI6MjA5MTM3Njk0OH0.Wjs298hA8xAnIQ4IQHEq3eEfaygF-6FY_5I4i2Se3ZY';
+const GH_RAW   = 'https://raw.githubusercontent.com/centralcomprasprincesscanarias/princess-data/main/';
+const ADMIN_PW = 'Princess2026';
 
-const DEP_ARCHIVOS = {
-  'Bares':               ['bares.json', 'restaurante_bares.json'],
-  'Cocina':              ['cocina.json'],
-  'Comedor Personal':    ['comedor_personal.json'],
-  'Economato':           ['economato.json'],
-  'Pisos':               ['pisos.json'],
-  'Restaurante':         ['restaurante.json', 'restaurante_bares.json'],
-  'Restaurante - Bares': ['restaurante_bares.json'],
-  'Temáticos':           ['tematicos.json']
+const DEP_ARCH = {
+  'Bares':['bares.json','restaurante_bares.json'],
+  'Cocina':['cocina.json'],
+  'Comedor Personal':['comedor_personal.json'],
+  'Economato':['economato.json'],
+  'Pisos':['pisos.json'],
+  'Restaurante':['restaurante.json','restaurante_bares.json'],
+  'Restaurante - Bares':['restaurante_bares.json'],
+  'Temáticos':['tematicos.json']
 };
+const DEP_ICO = {'Bares':'🍸','Cocina':'🍳','Comedor Personal':'🍽️','Economato':'📦','Pisos':'🛏️','Restaurante':'🍴','Restaurante - Bares':'🥂','Temáticos':'🎭'};
+const HOTELES_JU = ['Gran Canaria','Taurito','Mogán','La Palma','Fuerteventura','Jandia'];
+const DEPS_JU = ['Bares','Restaurante','Restaurante - Bares','Comedor Personal'];
 
-const DEP_ICONOS = {
-  'Bares': '🍸', 'Cocina': '🍳', 'Comedor Personal': '🍽️',
-  'Economato': '📦', 'Pisos': '🛏️', 'Restaurante': '🍴',
-  'Restaurante - Bares': '🥂', 'Temáticos': '🎭'
-};
+let sesion=null, esAdmin=false, todosArts=[], artsFiltrados=[], pedido={}, depActual=null;
 
-const HOTELES_JEFE_UNICO = ['Gran Canaria', 'Taurito', 'Mogan', 'La Palma', 'Fuerteventura', 'Jandia'];
-const DEPS_JEFE_UNICO = ['Bares', 'Restaurante', 'Restaurante - Bares', 'Comedor Personal'];
-
-// ══════════════════════════════════════════════════════════════
-// ESTADO
-// ══════════════════════════════════════════════════════════════
-let sesion = null;
-let esAdmin = false;
-let todosArticulos = [];
-let articulosFiltrados = [];
-let pedidoActual = {};
-let depSeleccionada = null;
-let indexDeps = [];
-
-// ══════════════════════════════════════════════════════════════
-// SUPABASE HELPER
-// ══════════════════════════════════════════════════════════════
-async function supaFetch(path, opts = {}) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
-    headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': `Bearer ${SUPABASE_KEY}`,
-      'Content-Type': 'application/json',
-      'Prefer': 'return=representation',
-      ...opts.headers
-    },
+async function supa(path, opts={}) {
+  const r = await fetch(`${SUPA_URL}/rest/v1/${path}`, {
+    headers:{'apikey':SUPA_KEY,'Authorization':`Bearer ${SUPA_KEY}`,'Content-Type':'application/json','Prefer':'return=representation',...(opts.headers||{})},
     ...opts
   });
-  if (!res.ok) throw new Error(await res.text());
-  const txt = await res.text();
-  return txt ? JSON.parse(txt) : [];
+  if (!r.ok) throw new Error(await r.text());
+  const t = await r.text(); return t ? JSON.parse(t) : [];
 }
 
-// ══════════════════════════════════════════════════════════════
-// TOAST
-// ══════════════════════════════════════════════════════════════
-function mostrarToast(msg, tipo = '') {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className = `toast visible ${tipo}`;
-  setTimeout(() => t.className = 'toast', 3000);
+function toast(msg, tipo='info') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = `toast visible toast-${tipo}`;
+  setTimeout(()=>el.className='toast', 3500);
 }
 
-// ══════════════════════════════════════════════════════════════
-// LOGIN / SESION
-// ══════════════════════════════════════════════════════════════
-function iniciarSesion() {
-  const nombre = document.getElementById('loginNombre').value.trim();
-  const apellido = document.getElementById('loginApellido').value.trim();
-  const hotel = document.getElementById('loginHotel').value;
-  const dep = document.getElementById('loginDepartamento').value;
-  if (!nombre || !apellido || !hotel || !dep) {
-    mostrarToast('Completa todos los campos', 'error'); return;
-  }
-  sesion = { nombre, apellido, hotel, departamento: dep };
-  document.getElementById('headerInfo').innerHTML = `<strong>${nombre} ${apellido}</strong> · ${hotel} · ${dep}`;
-  document.getElementById('header').style.display = 'flex';
-  mostrarPantalla('pPrincipal');
-  cargarDepartamentos();
-}
-
-function cerrarSesion() {
-  sesion = null; esAdmin = false; pedidoActual = {};
-  todosArticulos = []; depSeleccionada = null;
-  document.getElementById('header').style.display = 'none';
-  document.getElementById('tabAdmin').style.display = 'none';
-  mostrarPantalla('pLogin');
-}
-
-// ══════════════════════════════════════════════════════════════
-// ADMIN
-// ══════════════════════════════════════════════════════════════
-function abrirAdminOverlay() {
-  document.getElementById('adminOverlay').classList.add('visible');
-  document.getElementById('adminPass').value = '';
-  setTimeout(() => document.getElementById('adminPass').focus(), 100);
-}
-function cerrarAdminOverlay() {
-  document.getElementById('adminOverlay').classList.remove('visible');
-}
-function verificarAdmin() {
-  if (document.getElementById('adminPass').value === ADMIN_PASS) {
-    esAdmin = true;
-    cerrarAdminOverlay();
-    if (sesion) {
-      document.getElementById('tabAdmin').style.display = 'block';
-      mostrarTab('admin');
-    } else {
-      // login como admin directo
-      sesion = { nombre: 'Admin', apellido: '', hotel: 'Central de Compras', departamento: 'Todos' };
-      document.getElementById('headerInfo').innerHTML = `<strong>Administrador</strong> · Central de Compras`;
-      document.getElementById('header').style.display = 'flex';
-      document.getElementById('tabAdmin').style.display = 'block';
-      mostrarPantalla('pPrincipal');
-      mostrarTab('admin');
-      cargarAdminPedidos();
-    }
-    mostrarToast('Acceso admin concedido', 'exito');
-  } else {
-    mostrarToast('Contraseña incorrecta', 'error');
-  }
-}
-
-// ══════════════════════════════════════════════════════════════
-// NAVEGACIÓN
-// ══════════════════════════════════════════════════════════════
 function mostrarPantalla(id) {
-  document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
+  document.querySelectorAll('.pantalla').forEach(p=>p.classList.remove('activa'));
   document.getElementById(id).classList.add('activa');
 }
 
 function mostrarTab(tab) {
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('activo'));
-  document.getElementById('tabCatalogo').style.display = 'none';
-  document.getElementById('tabMisPedidos').style.display = 'none';
-  document.getElementById('tabAdmin2').style.display = 'none';
-
-  if (tab === 'catalogo') {
-    document.getElementById('tabCatalogo').style.display = 'block';
-    document.querySelectorAll('.nav-tab')[0].classList.add('activo');
-  } else if (tab === 'misPedidos') {
-    document.getElementById('tabMisPedidos').style.display = 'block';
-    document.querySelectorAll('.nav-tab')[1].classList.add('activo');
-    cargarMisPedidos();
-  } else if (tab === 'admin') {
-    document.getElementById('tabAdmin2').style.display = 'block';
-    document.getElementById('tabAdmin').classList.add('activo');
-    cargarAdminPedidos();
-  }
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('activo'));
+  document.querySelector(`[data-tab="${tab}"]`)?.classList.add('activo');
+  ['tabCatalogo','tabMisPedidos','tabAdmin'].forEach(id=>document.getElementById(id).style.display='none');
+  if(tab==='catalogo') { document.getElementById('tabCatalogo').style.display='block'; }
+  else if(tab==='misPedidos') { document.getElementById('tabMisPedidos').style.display='block'; cargarMisPedidos(); }
+  else if(tab==='admin') { document.getElementById('tabAdmin').style.display='block'; cargarAdmin(); }
 }
 
-// ══════════════════════════════════════════════════════════════
-// CARGAR DEPARTAMENTOS
-// ══════════════════════════════════════════════════════════════
-async function cargarDepartamentos() {
-  const grid = document.getElementById('depGrid');
-  grid.innerHTML = '<div class="loading"><div class="spinner"></div> Cargando...</div>';
-
-  // Determinar qué departamentos mostrar según sesión
-  const dep = sesion.departamento;
-  const hotel = sesion.hotel;
-  const esJefeUnico = HOTELES_JEFE_UNICO.some(h => hotel.includes(h)) && DEPS_JEFE_UNICO.includes(dep);
-
-  let depsVisibles = [];
-  if (esAdmin) {
-    depsVisibles = Object.keys(DEP_ARCHIVOS);
-  } else if (esJefeUnico) {
-    depsVisibles = DEPS_JEFE_UNICO;
-  } else {
-    depsVisibles = [dep];
-  }
-
-  // Cargar totales del index
-  try {
-    const res = await fetch(`${GITHUB_RAW}index.json`);
-    indexDeps = res.ok ? await res.json() : [];
-  } catch(e) { indexDeps = []; }
-
-  grid.innerHTML = '';
-  depsVisibles.forEach(d => {
-    const item = indexDeps.find(i => i.nombre === d) || {};
-    const card = document.createElement('div');
-    card.className = 'dep-card';
-    card.innerHTML = `
-      <div class="dep-card-icon">${DEP_ICONOS[d] || '📋'}</div>
-      <div class="dep-card-nombre">${d}</div>
-      <div class="dep-card-total">${item.total || '...'} artículos</div>
-    `;
-    card.onclick = () => seleccionarDep(d, card);
-    grid.appendChild(card);
-  });
-
-  // Auto-seleccionar si solo hay uno
-  if (depsVisibles.length === 1) {
-    const card = grid.querySelector('.dep-card');
-    seleccionarDep(depsVisibles[0], card);
-  }
+function iniciarSesion() {
+  const n=document.getElementById('loginNombre').value.trim();
+  const a=document.getElementById('loginApellido').value.trim();
+  const h=document.getElementById('loginHotel').value;
+  const d=document.getElementById('loginDep').value;
+  if(!n||!a||!h||!d){toast('Completa todos los campos','err');return;}
+  sesion={nombre:n,apellido:a,hotel:h,departamento:d};
+  document.getElementById('headerNombre').textContent=`${n} ${a}`;
+  document.getElementById('headerSub').textContent=`${h} · ${d}`;
+  document.getElementById('header').style.display='flex';
+  mostrarPantalla('pApp');
+  cargarDeps();
 }
 
-// ══════════════════════════════════════════════════════════════
-// SELECCIONAR DEPARTAMENTO Y CARGAR ARTÍCULOS
-// ══════════════════════════════════════════════════════════════
+function cerrarSesion() {
+  sesion=null; esAdmin=false; pedido={}; todosArts=[]; depActual=null;
+  document.getElementById('header').style.display='none';
+  document.getElementById('tabAdminBtn').style.display='none';
+  mostrarPantalla('pLogin');
+}
+
+function abrirOverlay() { document.getElementById('adminOverlay').classList.add('visible'); document.getElementById('adminPass').value=''; setTimeout(()=>document.getElementById('adminPass').focus(),100); }
+function cerrarOverlay() { document.getElementById('adminOverlay').classList.remove('visible'); }
+function verificarAdmin() {
+  if(document.getElementById('adminPass').value===ADMIN_PW) {
+    esAdmin=true; cerrarOverlay();
+    if(!sesion) { sesion={nombre:'Admin',apellido:'',hotel:'Central de Compras',departamento:'Todos'}; document.getElementById('headerNombre').textContent='Administrador'; document.getElementById('headerSub').textContent='Central de Compras'; document.getElementById('header').style.display='flex'; mostrarPantalla('pApp'); cargarDeps(); }
+    document.getElementById('tabAdminBtn').style.display='block';
+    mostrarTab('admin');
+    toast('Acceso admin concedido','ok');
+  } else { toast('Contraseña incorrecta','err'); }
+}
+
+function cargarDeps() {
+  const grid=document.getElementById('depGrid');
+  const dep=sesion.departamento, hotel=sesion.hotel;
+  const esJU = HOTELES_JU.some(h=>hotel.includes(h)) && DEPS_JU.includes(dep);
+  let deps = esAdmin ? Object.keys(DEP_ARCH) : esJU ? DEPS_JU : [dep];
+  grid.innerHTML = deps.map(d=>`
+    <div class="dep-card" onclick="seleccionarDep('${d}',this)">
+      <div class="dep-icon">${DEP_ICO[d]||'📋'}</div>
+      <div class="dep-nombre">${d}</div>
+      <div class="dep-total" id="depTotal_${d.replace(/\s/g,'_')}">cargando...</div>
+    </div>`).join('');
+  fetch(`${GH_RAW}index.json`).then(r=>r.json()).then(idx=>{
+    deps.forEach(d=>{
+      const item=idx.find(i=>i.nombre===d);
+      const el=document.getElementById(`depTotal_${d.replace(/\s/g,'_')}`);
+      if(el) el.textContent=(item?.total||'?')+' artículos';
+    });
+  }).catch(()=>{});
+  if(deps.length===1) setTimeout(()=>document.querySelector('.dep-card')?.click(),100);
+}
+
 async function seleccionarDep(dep, card) {
-  document.querySelectorAll('.dep-card').forEach(c => c.classList.remove('seleccionado'));
+  document.querySelectorAll('.dep-card').forEach(c=>c.classList.remove('seleccionado'));
   card.classList.add('seleccionado');
-  depSeleccionada = dep;
-
-  document.getElementById('subtituloCatalogo').textContent = `Departamento: ${dep}`;
-  document.getElementById('buscadorWrap').style.display = 'flex';
-  document.getElementById('pedidoSidebar').style.display = 'block';
-  document.getElementById('articulosContainer').innerHTML = '<div class="loading"><div class="spinner"></div> Cargando artículos...</div>';
-  document.getElementById('articulosInfo').textContent = '';
-
-  const archivos = DEP_ARCHIVOS[dep] || [];
-  todosArticulos = [];
-
-  for (const arch of archivos) {
+  depActual=dep;
+  document.getElementById('subCatalogo').textContent=`Departamento: ${dep}`;
+  document.getElementById('buscadorWrap').style.display='flex';
+  document.getElementById('pedidoSidebar').style.display='block';
+  document.getElementById('artContainer').innerHTML='<div class="loading"><div class="spinner"></div> Cargando artículos...</div>';
+  document.getElementById('artInfo').textContent='';
+  todosArts=[];
+  const seen=new Set();
+  for(const arch of DEP_ARCH[dep]||[]) {
     try {
-      const res = await fetch(`${GITHUB_RAW}${arch}`);
-      if (res.ok) {
-        const data = await res.json();
-        const validos = data.filter(a => a && a.id && a.referencia);
-        todosArticulos.push(...validos);
-      }
-    } catch(e) { console.warn('Error cargando', arch, e); }
+      const r=await fetch(`${GH_RAW}${arch}`);
+      if(r.ok) { const d=await r.json(); d.filter(a=>a&&a.id&&a.referencia&&!seen.has(a.id)).forEach(a=>{seen.add(a.id);todosArts.push(a);}); }
+    } catch(e){}
   }
-
-  // Eliminar duplicados por id
-  const seen = new Set();
-  todosArticulos = todosArticulos.filter(a => {
-    if (seen.has(a.id)) return false;
-    seen.add(a.id); return true;
-  });
-
-  filtrarArticulos();
+  filtrar();
 }
 
-// ══════════════════════════════════════════════════════════════
-// FILTRAR Y RENDERIZAR ARTÍCULOS
-// ══════════════════════════════════════════════════════════════
-function filtrarArticulos() {
-  const q = document.getElementById('buscadorInput').value.toLowerCase();
-  articulosFiltrados = q
-    ? todosArticulos.filter(a =>
-        (a.referencia||'').toLowerCase().includes(q) ||
-        (a.fabricante||'').toLowerCase().includes(q) ||
-        (a.dali||'').toLowerCase().includes(q) ||
-        (a.sap||'').toLowerCase().includes(q) ||
-        (a.codigo_fabrica||'').toLowerCase().includes(q)
-      )
-    : [...todosArticulos];
-
-  document.getElementById('articulosInfo').textContent =
-    `${articulosFiltrados.length} artículos${q ? ` para "${q}"` : ''}`;
-  renderizarArticulos();
+function filtrar() {
+  const q=document.getElementById('buscadorInput').value.toLowerCase();
+  artsFiltrados=q?todosArts.filter(a=>(a.referencia||'').toLowerCase().includes(q)||(a.fabricante||'').toLowerCase().includes(q)||(a.dali||'').toString().includes(q)||(a.sap||'').toString().includes(q)||(a.codigo_fabrica||'').toLowerCase().includes(q)):[...todosArts];
+  document.getElementById('artInfo').textContent=`${artsFiltrados.length} artículos${q?` · "${q}"`:''}`;
+  renderArts();
 }
 
-function limpiarBusqueda() {
-  document.getElementById('buscadorInput').value = '';
-  filtrarArticulos();
-}
+function limpiarBusqueda() { document.getElementById('buscadorInput').value=''; filtrar(); }
 
-function renderizarArticulos() {
-  const container = document.getElementById('articulosContainer');
-  if (!articulosFiltrados.length) {
-    container.innerHTML = '<div class="empty-state"><div class="icon">🔍</div><p>No se encontraron artículos</p></div>';
-    return;
-  }
-
-  let html = `<table class="articulos-tabla">
-    <thead><tr>
-      <th style="width:60px">Img</th>
-      <th>DALI</th>
-      <th>SAP</th>
-      <th>Referencia</th>
-      <th>Fabricante</th>
-      <th>Cód. Fábrica</th>
-      <th>Casa Delfín</th>
-      <th>PILSA</th>
-      <th style="width:80px">Cantidad</th>
-    </tr></thead><tbody>`;
-
-  articulosFiltrados.forEach(a => {
-    const cant = pedidoActual[a.id] || '';
-    const tieneCant = cant > 0;
-    const imgUrl = `${GITHUB_RAW}${a.dali}.jpg`;
-    html += `<tr>
-      <td><img class="art-img" src="${imgUrl}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
-          <div class="art-img-placeholder" style="display:none">📦</div></td>
-      <td><strong>${a.dali||'-'}</strong></td>
-      <td>${a.sap||'-'}</td>
-      <td>${a.referencia||'-'}</td>
-      <td>${a.fabricante||'-'}</td>
-      <td>${a.codigo_fabrica||'-'}</td>
+function renderArts() {
+  const c=document.getElementById('artContainer');
+  if(!artsFiltrados.length){c.innerHTML='<div class="empty-state"><div class="icon">🔍</div><p>Sin resultados</p></div>';return;}
+  c.innerHTML=`<table class="art-tabla"><thead><tr>
+    <th>Img</th><th>DALI</th><th>SAP</th><th>Referencia</th><th>Fabricante</th><th>Cód.Fábrica</th><th>Casa Delfín</th><th>PILSA</th><th>Cantidad</th>
+  </tr></thead><tbody>${artsFiltrados.map(a=>{
+    const cant=pedido[a.id]?.cantidad||'';
+    return `<tr>
+      <td><img class="art-img" src="${GH_RAW}${a.dali}.jpg" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="art-img-ph">📦</div></td>
+      <td><strong>${a.dali||'-'}</strong></td><td>${a.sap||'-'}</td><td>${a.referencia||'-'}</td>
+      <td>${a.fabricante||'-'}</td><td>${a.codigo_fabrica||'-'}</td>
       <td><span class="badge ${a.proveedor_casa_delfin==='SI'?'badge-si':'badge-no'}">${a.proveedor_casa_delfin||'NO'}</span></td>
       <td><span class="badge ${a.proveedor_pilsa==='SI'?'badge-si':'badge-no'}">${a.proveedor_pilsa||'NO'}</span></td>
-      <td><input class="cant-input ${tieneCant?'tiene-valor':''}" type="number" min="0"
-          value="${cant||''}" placeholder="0"
-          onchange="actualizarCantidad('${a.id}', this.value, '${(a.referencia||'').replace(/'/g,"\\'")}', this)"
-          oninput="this.className='cant-input'+(this.value>0?' tiene-valor':'')"></td>
+      <td><input class="cant-input${cant?' activo':''}" type="number" min="0" value="${cant}" placeholder="0"
+        onchange="setCant('${a.id}','${(a.referencia||'').replace(/'/g,"\\'")}',this.value,this)"
+        oninput="this.className='cant-input'+(this.value>0?' activo':'')"></td>
     </tr>`;
-  });
-
-  html += '</tbody></table>';
-  container.innerHTML = html;
+  }).join('')}</tbody></table>`;
 }
 
-// ══════════════════════════════════════════════════════════════
-// PEDIDO
-// ══════════════════════════════════════════════════════════════
-function actualizarCantidad(id, valor, ref, input) {
-  const cant = parseInt(valor) || 0;
-  if (cant > 0) {
-    pedidoActual[id] = { cantidad: cant, referencia: ref };
-  } else {
-    delete pedidoActual[id];
-  }
+function setCant(id,ref,val,input) {
+  const c=parseInt(val)||0;
+  if(c>0) pedido[id]={cantidad:c,referencia:ref}; else delete pedido[id];
   actualizarSidebar();
 }
 
 function actualizarSidebar() {
-  const items = Object.entries(pedidoActual);
-  const badge = document.getElementById('pedidoBadge');
-  const totalEl = document.getElementById('pedidoTotal');
-  const btnEnviar = document.getElementById('btnEnviarPedido');
-  const itemsEl = document.getElementById('pedidoItems');
-
-  badge.textContent = items.length;
-  const totalUds = items.reduce((s, [, v]) => s + (v.cantidad||0), 0);
-  totalEl.textContent = `${totalUds} uds.`;
-  btnEnviar.disabled = items.length === 0;
-
-  if (!items.length) {
-    itemsEl.innerHTML = '<div class="pedido-vacio">Sin artículos aún</div>';
-    return;
-  }
-
-  itemsEl.innerHTML = items.map(([id, v]) =>
-    `<div class="pedido-item">
-      <span class="pedido-item-nombre">${v.referencia}</span>
-      <span class="pedido-item-cant">×${v.cantidad}</span>
-    </div>`
-  ).join('');
+  const items=Object.entries(pedido);
+  document.getElementById('pedidoBadge').textContent=items.length;
+  document.getElementById('pedidoTotal').textContent=items.reduce((s,[,v])=>s+(v.cantidad||0),0)+' uds.';
+  document.getElementById('btnEnviar').disabled=!items.length;
+  const body=document.getElementById('pedidoItems');
+  body.innerHTML=items.length?items.map(([,v])=>`<div class="pedido-item"><span class="pedido-item-ref">${v.referencia}</span><span class="pedido-item-cant">×${v.cantidad}</span></div>`).join(''):'<div class="pedido-vacio">Sin artículos todavía</div>';
 }
 
-function limpiarPedido() {
-  pedidoActual = {};
-  actualizarSidebar();
-  renderizarArticulos();
-}
+function limpiarPedido() { pedido={}; actualizarSidebar(); renderArts(); }
 
 async function enviarPedido() {
-  const items = Object.entries(pedidoActual);
-  if (!items.length) { mostrarToast('El pedido está vacío', 'error'); return; }
-
-  const btn = document.getElementById('btnEnviarPedido');
-  btn.disabled = true;
-  btn.textContent = 'Guardando...';
-
-  const articulosGuardar = items.map(([id, v]) => {
-    const art = todosArticulos.find(a => String(a.id) === String(id));
-    return {
-      id, dali: art?.dali, sap: art?.sap,
-      referencia: art?.referencia, fabricante: art?.fabricante,
-      cantidad: v.cantidad
-    };
-  });
-
+  const items=Object.entries(pedido);
+  if(!items.length){toast('El pedido está vacío','err');return;}
+  const btn=document.getElementById('btnEnviar');
+  btn.disabled=true; btn.textContent='Guardando...';
+  const arts=items.map(([id,v])=>{const a=todosArts.find(x=>String(x.id)===String(id));return{id,dali:a?.dali,sap:a?.sap,referencia:a?.referencia,fabricante:a?.fabricante,cantidad:v.cantidad};});
   try {
-    await supaFetch('pedidos', {
-      method: 'POST',
-      body: JSON.stringify({
-        hotel: sesion.hotel,
-        departamento: depSeleccionada || sesion.departamento,
-        nombre: sesion.nombre,
-        apellido: sesion.apellido,
-        articulos: articulosGuardar,
-        estado: 'pendiente'
-      })
-    });
-    mostrarToast('✅ Pedido guardado correctamente', 'exito');
+    await supa('pedidos',{method:'POST',body:JSON.stringify({hotel:sesion.hotel,departamento:depActual||sesion.departamento,nombre:sesion.nombre,apellido:sesion.apellido,articulos:arts,estado:'pendiente'})});
+    toast('✅ Pedido guardado correctamente','ok');
     limpiarPedido();
-    btn.textContent = 'Enviar Pedido';
-  } catch(e) {
-    mostrarToast('Error al guardar el pedido', 'error');
-    console.error(e);
-    btn.disabled = false;
-    btn.textContent = 'Enviar Pedido';
-  }
+  } catch(e) { toast('Error al guardar el pedido','err'); console.error(e); }
+  btn.disabled=false; btn.textContent='Enviar Pedido';
 }
 
-// ══════════════════════════════════════════════════════════════
-// MIS PEDIDOS
-// ══════════════════════════════════════════════════════════════
 async function cargarMisPedidos() {
-  const container = document.getElementById('misPedidosContainer');
-  container.innerHTML = '<div class="loading"><div class="spinner"></div> Cargando...</div>';
-
-  let query = `pedidos?nombre=eq.${encodeURIComponent(sesion.nombre)}&apellido=eq.${encodeURIComponent(sesion.apellido)}&hotel=eq.${encodeURIComponent(sesion.hotel)}&order=created_at.desc`;
-
-  const estado = document.getElementById('filtroEstado').value;
-  if (estado) query += `&estado=eq.${estado}`;
-
-  const desde = document.getElementById('filtroFechaDesde').value;
-  if (desde) query += `&created_at=gte.${desde}`;
-  const hasta = document.getElementById('filtroFechaHasta').value;
-  if (hasta) query += `&created_at=lte.${hasta}T23:59:59`;
-
-  try {
-    const pedidos = await supaFetch(query);
-    renderizarPedidos(pedidos, container, false);
-  } catch(e) {
-    container.innerHTML = '<div class="empty-state"><div class="icon">❌</div><p>Error al cargar pedidos</p></div>';
-  }
+  const c=document.getElementById('misPedidosContainer');
+  c.innerHTML='<div class="loading"><div class="spinner"></div> Cargando...</div>';
+  let q=`pedidos?nombre=eq.${encodeURIComponent(sesion.nombre)}&apellido=eq.${encodeURIComponent(sesion.apellido)}&hotel=eq.${encodeURIComponent(sesion.hotel)}&order=created_at.desc`;
+  const est=document.getElementById('mpEstado').value; if(est) q+=`&estado=eq.${est}`;
+  const d=document.getElementById('mpDesde').value; if(d) q+=`&created_at=gte.${d}`;
+  const h=document.getElementById('mpHasta').value; if(h) q+=`&created_at=lte.${h}T23:59:59`;
+  try { renderPedidos(await supa(q), c, false); } catch(e) { c.innerHTML='<div class="empty-state"><div class="icon">❌</div><p>Error al cargar</p></div>'; }
 }
 
-// ══════════════════════════════════════════════════════════════
-// ADMIN PEDIDOS
-// ══════════════════════════════════════════════════════════════
-async function cargarAdminPedidos() {
-  const container = document.getElementById('adminPedidosContainer');
-  container.innerHTML = '<div class="loading"><div class="spinner"></div> Cargando...</div>';
-
-  let query = 'pedidos?order=created_at.desc';
-  const hotel = document.getElementById('adminFiltroHotel').value;
-  if (hotel) query += `&hotel=eq.${encodeURIComponent(hotel)}`;
-  const dep = document.getElementById('adminFiltroDep').value;
-  if (dep) query += `&departamento=eq.${encodeURIComponent(dep)}`;
-  const estado = document.getElementById('adminFiltroEstado').value;
-  if (estado) query += `&estado=eq.${estado}`;
-  const desde = document.getElementById('adminFiltroDesde').value;
-  if (desde) query += `&created_at=gte.${desde}`;
-  const hasta = document.getElementById('adminFiltroHasta').value;
-  if (hasta) query += `&created_at=lte.${hasta}T23:59:59`;
-
-  try {
-    const pedidos = await supaFetch(query);
-    renderizarStats(pedidos);
-    renderizarPedidos(pedidos, container, true);
-  } catch(e) {
-    container.innerHTML = '<div class="empty-state"><div class="icon">❌</div><p>Error al cargar pedidos</p></div>';
-  }
+async function cargarAdmin() {
+  const c=document.getElementById('adminContainer');
+  c.innerHTML='<div class="loading"><div class="spinner"></div> Cargando...</div>';
+  let q='pedidos?order=created_at.desc';
+  const hotel=document.getElementById('aHotel').value; if(hotel) q+=`&hotel=eq.${encodeURIComponent(hotel)}`;
+  const dep=document.getElementById('aDep').value; if(dep) q+=`&departamento=eq.${encodeURIComponent(dep)}`;
+  const est=document.getElementById('aEstado').value; if(est) q+=`&estado=eq.${est}`;
+  const d=document.getElementById('aDesde').value; if(d) q+=`&created_at=gte.${d}`;
+  const h=document.getElementById('aHasta').value; if(h) q+=`&created_at=lte.${h}T23:59:59`;
+  try { const p=await supa(q); renderStats(p); renderPedidos(p,c,true); } catch(e) { c.innerHTML='<div class="empty-state"><div class="icon">❌</div><p>Error al cargar</p></div>'; }
 }
 
-function renderizarStats(pedidos) {
-  const stats = document.getElementById('adminStats');
-  const total = pedidos.length;
-  const pendientes = pedidos.filter(p => p.estado === 'pendiente').length;
-  const procesados = pedidos.filter(p => p.estado === 'procesado').length;
-  const uds = pedidos.reduce((s, p) => s + (p.articulos||[]).reduce((ss, a) => ss + (a.cantidad||0), 0), 0);
-
-  stats.innerHTML = [
-    ['📋', 'Total pedidos', total, '#5C3D1E'],
-    ['⏳', 'Pendientes', pendientes, '#856404'],
-    ['✅', 'Procesados', procesados, '#155724'],
-    ['📦', 'Total unidades', uds, '#1a1a1a']
-  ].map(([icon, label, val, color]) => `
-    <div style="background:#fff;border-radius:10px;padding:16px 20px;border:1.5px solid var(--beige-mid);min-width:140px;box-shadow:var(--sombra)">
-      <div style="font-size:20px">${icon}</div>
-      <div style="font-size:22px;font-weight:700;color:${color};margin:4px 0">${val}</div>
-      <div style="font-size:12px;color:var(--texto-suave)">${label}</div>
-    </div>
-  `).join('');
+function renderStats(pedidos) {
+  const total=pedidos.length, pend=pedidos.filter(p=>p.estado==='pendiente').length, proc=pedidos.filter(p=>p.estado==='procesado').length;
+  const uds=pedidos.reduce((s,p)=>s+(p.articulos||[]).reduce((ss,a)=>ss+(a.cantidad||0),0),0);
+  document.getElementById('adminStats').innerHTML=[
+    ['📋','Total pedidos',total,'#2C1810'],['⏳','Pendientes',pend,'#856404'],
+    ['✅','Procesados',proc,'#155724'],['📦','Unidades totales',uds,'#1a1a1a']
+  ].map(([ico,lbl,val,col])=>`<div class="stat-card"><div class="stat-icon">${ico}</div><div class="stat-val" style="color:${col}">${val}</div><div class="stat-label">${lbl}</div></div>`).join('');
 }
 
-function renderizarPedidos(pedidos, container, isAdmin) {
-  if (!pedidos.length) {
-    container.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>No hay pedidos</p></div>';
-    return;
-  }
-
-  container.innerHTML = '<div class="pedidos-lista">' + pedidos.map(p => {
-    const fecha = new Date(p.created_at).toLocaleString('es-ES');
-    const arts = (p.articulos||[]);
-    const totalUds = arts.reduce((s, a) => s + (a.cantidad||0), 0);
-    const resumen = arts.slice(0, 3).map(a => `${a.referencia} ×${a.cantidad}`).join(' · ');
-    const masArts = arts.length > 3 ? ` · +${arts.length - 3} más` : '';
-
+function renderPedidos(pedidos, container, isAdmin) {
+  if(!pedidos.length){container.innerHTML='<div class="empty-state"><div class="icon">📭</div><p>No hay pedidos</p></div>';return;}
+  const items=pedidos.map(p=>{
+    const fecha=new Date(p.created_at).toLocaleString('es-ES');
+    const arts=p.articulos||[];
+    const uds=arts.reduce((s,a)=>s+(a.cantidad||0),0);
+    const res=arts.slice(0,3).map(a=>`${a.referencia} ×${a.cantidad}`).join(' · ')+(arts.length>3?` · +${arts.length-3} más`:'');
     return `<div class="pedido-card">
       <div>
-        <div class="pedido-card-titulo">${p.hotel} · ${p.departamento}</div>
-        <div class="pedido-card-meta">${p.nombre} ${p.apellido} · ${fecha}</div>
-        <div class="pedido-card-articulos">${resumen}${masArts}</div>
-        <div class="pedido-card-meta" style="margin-top:6px">${arts.length} artículos · ${totalUds} uds. totales</div>
+        <div class="pc-titulo">${p.hotel} · ${p.departamento}</div>
+        <div class="pc-meta">${p.nombre} ${p.apellido} · ${fecha}</div>
+        <div class="pc-arts">${res}</div>
+        <div class="pc-meta" style="margin-top:6px">${arts.length} artículos · ${uds} uds.</div>
       </div>
-      <div class="pedido-card-acciones">
+      <div class="pc-acciones">
         <span class="estado-badge estado-${p.estado}">${p.estado}</span>
-        ${isAdmin ? `
-          <select onchange="cambiarEstado('${p.id}', this.value)" style="padding:6px 10px;border:1.5px solid var(--beige-dark);border-radius:6px;font-size:12px;cursor:pointer">
-            <option ${p.estado==='pendiente'?'selected':''} value="pendiente">Pendiente</option>
-            <option ${p.estado==='procesado'?'selected':''} value="procesado">Procesado</option>
-            <option ${p.estado==='rechazado'?'selected':''} value="rechazado">Rechazado</option>
-          </select>
-          <button onclick="verDetallePedido('${p.id}')" style="padding:6px 12px;background:var(--marron);color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer">Ver detalle</button>
-        ` : `<button onclick="verDetallePedido('${p.id}')" style="padding:6px 12px;background:var(--marron);color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer">Ver detalle</button>`}
+        ${isAdmin?`<select class="select-estado" onchange="cambiarEstado('${p.id}',this.value)">
+          <option ${p.estado==='pendiente'?'selected':''} value="pendiente">Pendiente</option>
+          <option ${p.estado==='procesado'?'selected':''} value="procesado">Procesado</option>
+          <option ${p.estado==='rechazado'?'selected':''} value="rechazado">Rechazado</option>
+        </select>`:''}
       </div>
     </div>`;
-  }).join('') + '</div>';
+  }).join('');
+  container.innerHTML=`<div class="pedidos-lista">${items}</div>`;
 }
 
-async function cambiarEstado(id, nuevoEstado) {
+async function cambiarEstado(id, estado) {
   try {
-    await supaFetch(`pedidos?id=eq.${id}`, {
-      method: 'PATCH',
-      body: JSON.stringify({ estado: nuevoEstado })
-    });
-    mostrarToast(`Estado actualizado: ${nuevoEstado}`, 'exito');
-    cargarAdminPedidos();
-  } catch(e) {
-    mostrarToast('Error al cambiar estado', 'error');
-  }
+    await supa(`pedidos?id=eq.${id}`,{method:'PATCH',body:JSON.stringify({estado})});
+    toast(`Estado: ${estado}`,'ok');
+    cargarAdmin();
+  } catch(e) { toast('Error al cambiar estado','err'); }
 }
 
-function verDetallePedido(id) {
-  // Buscar en el DOM actual — simplificado
-  mostrarToast('Función detalle próximamente', '');
-}
-
-// ══════════════════════════════════════════════════════════════
-// INIT
-// ══════════════════════════════════════════════════════════════
-document.getElementById('adminPass').addEventListener('keydown', e => {
-  if (e.key === 'Enter') verificarAdmin();
-});
+document.getElementById('adminPass').addEventListener('keydown',e=>{if(e.key==='Enter')verificarAdmin();});
+document.getElementById('loginNombre').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('loginApellido').focus();});
 </script>
 </body>
 </html>
