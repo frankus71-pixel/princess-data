@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dosier · Princess Hotels</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --beige:       #FAF7F2;
+  --beige-mid:   #F0EBE0;
+  --beige-dark:  #D4C4A8;
+  --marron:      #5C3D1E;
+  --marron-mid:  #8B6914;
+  --marron-light:#C49A3C;
+  --oro:         #D4A843;
+  --verde:       #2D6A4F;
+  --rojo:        #C0392B;
+  --texto:       #1A1A1A;
+  --texto-suave: #6B5B3E;
+  --blanco:      #FFFFFF;
+  --sombra:      0 2px 12px rgba(92,61,30,0.10);
+  --sombra-hover:0 6px 24px rgba(92,61,30,0.18);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--beige);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--marron);
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.header-logo {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--oro);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.header-logo span { color: #fff; font-weight: 400; }
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 13px;
+}
+.header-user strong { color: var(--oro); }
+.btn-salir {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+.btn-salir:hover { background: rgba(255,255,255,0.25); }
+
+/* ── PANTALLAS ── */
+.pantalla { display: none; }
+.pantalla.activa { display: block; }
+
+/* ── LOGIN ── */
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--marron) 0%, #3D2210 100%);
+}
+.login-card {
+  background: var(--blanco);
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.login-logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.login-logo h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  color: var(--marron);
+  font-weight: 700;
+}
+.login-logo p {
+  color: var(--texto-suave);
+  font-size: 13px;
+  margin-top: 4px;
+}
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--texto-suave);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--beige-dark);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  background: var(--beige);
+  color: var(--texto);
+  transition: border-color 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus { border-color: var(--marron-mid); background: #fff; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: var(--marron);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 8px;
+}
+.btn-primary:hover { background: #3D2210; }
+.btn-primary:active { transform: scale(0.98); }
+.login-admin-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+.login-admin-link a {
+  color: var(--marron-mid);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ── NAV TABS ── */
+.nav-tabs {
+  background: var(--blanco);
+  border-bottom: 2px solid var(--beige-mid);
+  display: flex;
+  gap: 0;
+  padding: 0 24px;
+}
+.nav-tab {
+  padding: 14px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texto-suave);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav-tab:hover { color: var(--marron); }
+.nav-tab.activo { color: var(--marron); border-bottom-color: var(--marron); }
+
+/* ── CONTENIDO PRINCIPAL ── */
+.main-content { padding: 24px; max-width: 1400px; margin: 0 auto; }
+
+/* ── DEPARTAMENTOS GRID ── */
+.seccion-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--marron);
+  margin-bottom: 6px;
+}
+.seccion-sub {
+  color: var(--texto-suave);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.dep-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.dep-card {
+  background: var(--blanco);
+  border: 1.5px solid var(--beige-mid);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+.dep-card:hover {
+  border-color: var(--marron-mid);
+  box-shadow: var(--sombra-hover);
+  transform: translateY(-2px);
+}
+.dep-card.seleccionado {
+  border-color: var(--marron);
+  background: #FDF8F0;
+}
+.dep-card-icon { font-size: 28px; margin-bottom: 8px; }
+.dep-card-nombre {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--texto);
+}
+.dep-card-total {
+  font-size: 11px;
+  color: var(--texto-suave);
+  margin-top: 4px;
+}
+
+/* ── BUSCADOR ── */
+.buscador-wrap {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.buscador-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid var(--beige-dark);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  background: var(--blanco);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.buscador-input:focus { border-color: var(--marron-mid); }
+.btn-secundario {
+  padding: 12px 20px;
+  background: var(--blanco);
+  border: 1.5px solid var(--beige-dark);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texto-suave);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-secundario:hover { border-color: var(--marron-mid); color: var(--marron); }
+.btn-verde {
+  padding: 12px 20px;
+  background: var(--verde);
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn-verde:hover { background: #1e4f3a; }
+.btn-verde:disabled { background: #aaa; cursor: not-allowed; }
+
+/* ── ARTICULOS TABLA ── */
+.articulos-info {
+  font-size: 12px;
+  color: var(--texto-suave);
+  margin-bottom: 12px;
+}
+.articulos-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--blanco);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+.articulos-tabla th {
+  background: var(--marron);
+  color: #fff;
+  padding: 12px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.articulos-tabla td {
+  padding: 10px;
+  border-bottom: 1px solid var(--beige-mid);
+  font-size: 13px;
+  vertical-align: middle;
+}
+.articulos-tabla tr:last-child td { border-bottom: none; }
+.articulos-tabla tr:hover td { background: #FDFAF5; }
+.art-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--beige);
+  border: 1px solid var(--beige-mid);
+}
+.art-img-placeholder {
+  width: 48px;
+  height: 48px;
+  background: var(--beige-mid);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.badge-si { background: #D4EDDA; color: #155724; }
+.badge-no { background: #F8D7DA; color: #721C24; }
+.cant-input {
+  width: 64px;
+  padding: 6px 8px;
+  border: 1.5px solid var(--beige-dark);
+  border-radius: 6px;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--marron-mid);
+  background: var(--beige);
+  outline: none;
+}
+.cant-input:focus { border-color: var(--marron-mid); background: #fff; }
+.cant-input.tiene-valor { border-color: var(--marron); background: #FDF0D5; }
+
+/* ── PEDIDO SIDEBAR ── */
+.layout-catalogo {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .layout-catalogo { grid-template-columns: 1fr; }
+}
+.pedido-sidebar {
+  background: var(--blanco);
+  border-radius: 12px;
+  border: 1.5px solid var(--beige-dark);
+  box-shadow: var(--sombra);
+  position: sticky;
+  top: 90px;
+  overflow: hidden;
+}
+.pedido-sidebar-header {
+  background: var(--marron);
+  color: #fff;
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pedido-sidebar-badge {
+  background: var(--oro);
+  color: var(--marron);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+.pedido-sidebar-body { padding: 16px; max-height: 400px; overflow-y: auto; }
+.pedido-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--beige-mid);
+  gap: 8px;
+}
+.pedido-item:last-child { border-bottom: none; }
+.pedido-item-nombre {
+  font-size: 12px;
+  color: var(--texto);
+  flex: 1;
+  line-height: 1.4;
+}
+.pedido-item-cant {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--marron);
+  white-space: nowrap;
+}
+.pedido-sidebar-footer { padding: 16px; border-top: 1px solid var(--beige-mid); }
+.pedido-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--texto-suave);
+  margin-bottom: 12px;
+}
+.pedido-total strong { color: var(--marron); font-size: 15px; }
+.pedido-vacio {
+  text-align: center;
+  padding: 24px 16px;
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+/* ── HISTORIAL ── */
+.filtros-wrap {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.filtros-wrap select,
+.filtros-wrap input {
+  padding: 10px 14px;
+  border: 1.5px solid var(--beige-dark);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  background: var(--blanco);
+  outline: none;
+}
+.pedidos-lista { display: flex; flex-direction: column; gap: 12px; }
+.pedido-card {
+  background: var(--blanco);
+  border-radius: 12px;
+  border: 1.5px solid var(--beige-mid);
+  padding: 20px;
+  box-shadow: var(--sombra);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+}
+.pedido-card-meta { font-size: 12px; color: var(--texto-suave); margin-top: 4px; }
+.pedido-card-titulo {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--marron);
+}
+.pedido-card-articulos {
+  font-size: 12px;
+  color: var(--texto-suave);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+.estado-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.estado-pendiente { background: #FFF3CD; color: #856404; }
+.estado-procesado { background: #D4EDDA; color: #155724; }
+.estado-rechazado { background: #F8D7DA; color: #721C24; }
+.pedido-card-acciones { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+
+/* ── ADMIN LOGIN ── */
+.admin-login-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+.admin-login-overlay.visible { display: flex; }
+.admin-login-card {
+  background: var(--blanco);
+  border-radius: 16px;
+  padding: 32px;
+  width: 320px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.admin-login-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--marron);
+  margin-bottom: 20px;
+}
+
+/* ── LOADING ── */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  color: var(--texto-suave);
+  gap: 12px;
+  font-size: 14px;
+}
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--beige-dark);
+  border-top-color: var(--marron);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--marron);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  z-index: 300;
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.toast.visible { transform: translateY(0); opacity: 1; }
+.toast.exito { background: var(--verde); }
+.toast.error { background: var(--rojo); }
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--texto-suave);
+}
+.empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+.empty-state p { font-size: 14px; }
+</style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ADMIN LOGIN OVERLAY -->
+<div class="admin-login-overlay" id="adminOverlay">
+  <div class="admin-login-card">
+    <h3>🔐 Acceso Admin</h3>
+    <div class="form-group">
+      <label>Contraseña</label>
+      <input type="password" id="adminPass" placeholder="••••••••">
+    </div>
+    <button class="btn-primary" onclick="verificarAdmin()">Entrar como Admin</button>
+    <button class="btn-secundario" style="width:100%;margin-top:8px" onclick="cerrarAdminOverlay()">Cancelar</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="header" id="header" style="display:none">
+  <div class="header-logo">Dosier <span>· Princess Hotels</span></div>
+  <div class="header-user">
+    <span id="headerInfo"></span>
+    <button class="btn-salir" onclick="cerrarSesion()">Salir</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     PANTALLA LOGIN
+═══════════════════════════════════════════════════════════════ -->
+<div class="pantalla activa" id="pLogin">
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-logo">
+        <h1>Dosier</h1>
+        <p>Princess Hotels & Resorts · Central de Compras</p>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" id="loginNombre" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label>Apellido</label>
+          <input type="text" id="loginApellido" placeholder="Tu apellido">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Hotel</label>
+        <select id="loginHotel">
+          <option value="">Selecciona hotel...</option>
+          <option>Hotel Gran Canaria Princess</option>
+          <option>Hotel Taurito Princess</option>
+          <option>Hotel Mogan Princess</option>
+          <option>Hotel La Palma Princess</option>
+          <option>Hotel Fuerteventura Princess</option>
+          <option>Hotel Jandia Princess</option>
+          <option>Hotel Beverly Hills</option>
+          <option>Hotel Santa Águeda</option>
+          <option>Central de Compras</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Departamento</label>
+        <select id="loginDepartamento">
+          <option value="">Selecciona departamento...</option>
+          <option>Bares</option>
+          <option>Cocina</option>
+          <option>Comedor Personal</option>
+          <option>Economato</option>
+          <option>Pisos</option>
+          <option>Restaurante</option>
+          <option>Restaurante - Bares</option>
+          <option>Temáticos</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="iniciarSesion()">Entrar</button>
+      <div class="login-admin-link">
+        <a onclick="abrirAdminOverlay()">Acceso administrador</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     PANTALLA PRINCIPAL
+═══════════════════════════════════════════════════════════════ -->
+<div class="pantalla" id="pPrincipal">
+  <div class="nav-tabs" id="navTabs">
+    <div class="nav-tab activo" onclick="mostrarTab('catalogo')">📦 Catálogo</div>
+    <div class="nav-tab" onclick="mostrarTab('misPedidos')">📋 Mis Pedidos</div>
+    <div class="nav-tab" id="tabAdmin" style="display:none" onclick="mostrarTab('admin')">🔐 Admin</div>
+  </div>
+
+  <!-- TAB CATÁLOGO -->
+  <div id="tabCatalogo" class="main-content">
+    <h2 class="seccion-titulo">Catálogo de Artículos</h2>
+    <p class="seccion-sub" id="subtituloCatalogo">Selecciona un departamento para ver los artículos</p>
+
+    <div class="dep-grid" id="depGrid">
+      <div class="loading"><div class="spinner"></div> Cargando departamentos...</div>
+    </div>
+
+    <div class="layout-catalogo">
+      <div>
+        <div class="buscador-wrap" id="buscadorWrap" style="display:none">
+          <input class="buscador-input" id="buscadorInput" placeholder="Buscar por referencia, fabricante, DALI..." oninput="filtrarArticulos()">
+          <button class="btn-secundario" onclick="limpiarBusqueda()">Limpiar</button>
+        </div>
+        <div id="articulosInfo" class="articulos-info"></div>
+        <div id="articulosContainer"></div>
+      </div>
+
+      <div class="pedido-sidebar" id="pedidoSidebar" style="display:none">
+        <div class="pedido-sidebar-header">
+          <span>🛒 Pedido actual</span>
+          <span class="pedido-sidebar-badge" id="pedidoBadge">0</span>
+        </div>
+        <div class="pedido-sidebar-body" id="pedidoItems">
+          <div class="pedido-vacio">Sin artículos aún</div>
+        </div>
+        <div class="pedido-sidebar-footer">
+          <div class="pedido-total">
+            <span>Total artículos:</span>
+            <strong id="pedidoTotal">0 uds.</strong>
+          </div>
+          <button class="btn-verde" id="btnEnviarPedido" onclick="enviarPedido()" disabled>Enviar Pedido</button>
+          <button class="btn-secundario" style="width:100%;margin-top:8px" onclick="limpiarPedido()">Limpiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB MIS PEDIDOS -->
+  <div id="tabMisPedidos" class="main-content" style="display:none">
+    <h2 class="seccion-titulo">Mis Pedidos</h2>
+    <p class="seccion-sub">Historial de pedidos realizados</p>
+    <div class="filtros-wrap">
+      <input type="date" id="filtroFechaDesde" onchange="cargarMisPedidos()">
+      <input type="date" id="filtroFechaHasta" onchange="cargarMisPedidos()">
+      <select id="filtroEstado" onchange="cargarMisPedidos()">
+        <option value="">Todos los estados</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="procesado">Procesado</option>
+        <option value="rechazado">Rechazado</option>
+      </select>
+    </div>
+    <div id="misPedidosContainer"></div>
+  </div>
+
+  <!-- TAB ADMIN -->
+  <div id="tabAdmin2" class="main-content" style="display:none">
+    <h2 class="seccion-titulo">Panel de Administración</h2>
+    <p class="seccion-sub">Todos los pedidos — control total</p>
+    <div class="filtros-wrap">
+      <select id="adminFiltroHotel" onchange="cargarAdminPedidos()">
+        <option value="">Todos los hoteles</option>
+        <option>Hotel Gran Canaria Princess</option>
+        <option>Hotel Taurito Princess</option>
+        <option>Hotel Mogan Princess</option>
+        <option>Hotel La Palma Princess</option>
+        <option>Hotel Fuerteventura Princess</option>
+        <option>Hotel Jandia Princess</option>
+        <option>Hotel Beverly Hills</option>
+        <option>Hotel Santa Águeda</option>
+        <option>Central de Compras</option>
+      </select>
+      <select id="adminFiltroDep" onchange="cargarAdminPedidos()">
+        <option value="">Todos los departamentos</option>
+        <option>Bares</option>
+        <option>Cocina</option>
+        <option>Comedor Personal</option>
+        <option>Economato</option>
+        <option>Pisos</option>
+        <option>Restaurante</option>
+        <option>Restaurante - Bares</option>
+        <option>Temáticos</option>
+      </select>
+      <select id="adminFiltroEstado" onchange="cargarAdminPedidos()">
+        <option value="">Todos los estados</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="procesado">Procesado</option>
+        <option value="rechazado">Rechazado</option>
+      </select>
+      <input type="date" id="adminFiltroDesde" onchange="cargarAdminPedidos()">
+      <input type="date" id="adminFiltroHasta" onchange="cargarAdminPedidos()">
+    </div>
+    <div id="adminStats" style="display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap"></div>
+    <div id="adminPedidosContainer"></div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// CONFIG
+// ══════════════════════════════════════════════════════════════
+const SUPABASE_URL  = 'https://ifiwuloipapsezmssyda.supabase.co';
+const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlmaXd1bG9pcGFwc2V6bXNzeWRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4MDA5NDgsImV4cCI6MjA5MTM3Njk0OH0.Wjs298hA8xAnIQ4IQHEq3eEfaygF-6FY_5I4i2Se3ZY';
+const GITHUB_RAW    = 'https://raw.githubusercontent.com/centralcomprasprincesscanarias/princess-data/main/';
+const ADMIN_PASS    = 'Princess2026';
+
+const DEP_ARCHIVOS = {
+  'Bares':               ['bares.json', 'restaurante_bares.json'],
+  'Cocina':              ['cocina.json'],
+  'Comedor Personal':    ['comedor_personal.json'],
+  'Economato':           ['economato.json'],
+  'Pisos':               ['pisos.json'],
+  'Restaurante':         ['restaurante.json', 'restaurante_bares.json'],
+  'Restaurante - Bares': ['restaurante_bares.json'],
+  'Temáticos':           ['tematicos.json']
+};
+
+const DEP_ICONOS = {
+  'Bares': '🍸', 'Cocina': '🍳', 'Comedor Personal': '🍽️',
+  'Economato': '📦', 'Pisos': '🛏️', 'Restaurante': '🍴',
+  'Restaurante - Bares': '🥂', 'Temáticos': '🎭'
+};
+
+const HOTELES_JEFE_UNICO = ['Gran Canaria', 'Taurito', 'Mogan', 'La Palma', 'Fuerteventura', 'Jandia'];
+const DEPS_JEFE_UNICO = ['Bares', 'Restaurante', 'Restaurante - Bares', 'Comedor Personal'];
+
+// ══════════════════════════════════════════════════════════════
+// ESTADO
+// ══════════════════════════════════════════════════════════════
+let sesion = null;
+let esAdmin = false;
+let todosArticulos = [];
+let articulosFiltrados = [];
+let pedidoActual = {};
+let depSeleccionada = null;
+let indexDeps = [];
+
+// ══════════════════════════════════════════════════════════════
+// SUPABASE HELPER
+// ══════════════════════════════════════════════════════════════
+async function supaFetch(path, opts = {}) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': `Bearer ${SUPABASE_KEY}`,
+      'Content-Type': 'application/json',
+      'Prefer': 'return=representation',
+      ...opts.headers
+    },
+    ...opts
+  });
+  if (!res.ok) throw new Error(await res.text());
+  const txt = await res.text();
+  return txt ? JSON.parse(txt) : [];
+}
+
+// ══════════════════════════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════════════════════════
+function mostrarToast(msg, tipo = '') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast visible ${tipo}`;
+  setTimeout(() => t.className = 'toast', 3000);
+}
+
+// ══════════════════════════════════════════════════════════════
+// LOGIN / SESION
+// ══════════════════════════════════════════════════════════════
+function iniciarSesion() {
+  const nombre = document.getElementById('loginNombre').value.trim();
+  const apellido = document.getElementById('loginApellido').value.trim();
+  const hotel = document.getElementById('loginHotel').value;
+  const dep = document.getElementById('loginDepartamento').value;
+  if (!nombre || !apellido || !hotel || !dep) {
+    mostrarToast('Completa todos los campos', 'error'); return;
+  }
+  sesion = { nombre, apellido, hotel, departamento: dep };
+  document.getElementById('headerInfo').innerHTML = `<strong>${nombre} ${apellido}</strong> · ${hotel} · ${dep}`;
+  document.getElementById('header').style.display = 'flex';
+  mostrarPantalla('pPrincipal');
+  cargarDepartamentos();
+}
+
+function cerrarSesion() {
+  sesion = null; esAdmin = false; pedidoActual = {};
+  todosArticulos = []; depSeleccionada = null;
+  document.getElementById('header').style.display = 'none';
+  document.getElementById('tabAdmin').style.display = 'none';
+  mostrarPantalla('pLogin');
+}
+
+// ══════════════════════════════════════════════════════════════
+// ADMIN
+// ══════════════════════════════════════════════════════════════
+function abrirAdminOverlay() {
+  document.getElementById('adminOverlay').classList.add('visible');
+  document.getElementById('adminPass').value = '';
+  setTimeout(() => document.getElementById('adminPass').focus(), 100);
+}
+function cerrarAdminOverlay() {
+  document.getElementById('adminOverlay').classList.remove('visible');
+}
+function verificarAdmin() {
+  if (document.getElementById('adminPass').value === ADMIN_PASS) {
+    esAdmin = true;
+    cerrarAdminOverlay();
+    if (sesion) {
+      document.getElementById('tabAdmin').style.display = 'block';
+      mostrarTab('admin');
+    } else {
+      // login como admin directo
+      sesion = { nombre: 'Admin', apellido: '', hotel: 'Central de Compras', departamento: 'Todos' };
+      document.getElementById('headerInfo').innerHTML = `<strong>Administrador</strong> · Central de Compras`;
+      document.getElementById('header').style.display = 'flex';
+      document.getElementById('tabAdmin').style.display = 'block';
+      mostrarPantalla('pPrincipal');
+      mostrarTab('admin');
+      cargarAdminPedidos();
+    }
+    mostrarToast('Acceso admin concedido', 'exito');
+  } else {
+    mostrarToast('Contraseña incorrecta', 'error');
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// NAVEGACIÓN
+// ══════════════════════════════════════════════════════════════
+function mostrarPantalla(id) {
+  document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
+  document.getElementById(id).classList.add('activa');
+}
+
+function mostrarTab(tab) {
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('activo'));
+  document.getElementById('tabCatalogo').style.display = 'none';
+  document.getElementById('tabMisPedidos').style.display = 'none';
+  document.getElementById('tabAdmin2').style.display = 'none';
+
+  if (tab === 'catalogo') {
+    document.getElementById('tabCatalogo').style.display = 'block';
+    document.querySelectorAll('.nav-tab')[0].classList.add('activo');
+  } else if (tab === 'misPedidos') {
+    document.getElementById('tabMisPedidos').style.display = 'block';
+    document.querySelectorAll('.nav-tab')[1].classList.add('activo');
+    cargarMisPedidos();
+  } else if (tab === 'admin') {
+    document.getElementById('tabAdmin2').style.display = 'block';
+    document.getElementById('tabAdmin').classList.add('activo');
+    cargarAdminPedidos();
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// CARGAR DEPARTAMENTOS
+// ══════════════════════════════════════════════════════════════
+async function cargarDepartamentos() {
+  const grid = document.getElementById('depGrid');
+  grid.innerHTML = '<div class="loading"><div class="spinner"></div> Cargando...</div>';
+
+  // Determinar qué departamentos mostrar según sesión
+  const dep = sesion.departamento;
+  const hotel = sesion.hotel;
+  const esJefeUnico = HOTELES_JEFE_UNICO.some(h => hotel.includes(h)) && DEPS_JEFE_UNICO.includes(dep);
+
+  let depsVisibles = [];
+  if (esAdmin) {
+    depsVisibles = Object.keys(DEP_ARCHIVOS);
+  } else if (esJefeUnico) {
+    depsVisibles = DEPS_JEFE_UNICO;
+  } else {
+    depsVisibles = [dep];
+  }
+
+  // Cargar totales del index
+  try {
+    const res = await fetch(`${GITHUB_RAW}index.json`);
+    indexDeps = res.ok ? await res.json() : [];
+  } catch(e) { indexDeps = []; }
+
+  grid.innerHTML = '';
+  depsVisibles.forEach(d => {
+    const item = indexDeps.find(i => i.nombre === d) || {};
+    const card = document.createElement('div');
+    card.className = 'dep-card';
+    card.innerHTML = `
+      <div class="dep-card-icon">${DEP_ICONOS[d] || '📋'}</div>
+      <div class="dep-card-nombre">${d}</div>
+      <div class="dep-card-total">${item.total || '...'} artículos</div>
+    `;
+    card.onclick = () => seleccionarDep(d, card);
+    grid.appendChild(card);
+  });
+
+  // Auto-seleccionar si solo hay uno
+  if (depsVisibles.length === 1) {
+    const card = grid.querySelector('.dep-card');
+    seleccionarDep(depsVisibles[0], card);
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// SELECCIONAR DEPARTAMENTO Y CARGAR ARTÍCULOS
+// ══════════════════════════════════════════════════════════════
+async function seleccionarDep(dep, card) {
+  document.querySelectorAll('.dep-card').forEach(c => c.classList.remove('seleccionado'));
+  card.classList.add('seleccionado');
+  depSeleccionada = dep;
+
+  document.getElementById('subtituloCatalogo').textContent = `Departamento: ${dep}`;
+  document.getElementById('buscadorWrap').style.display = 'flex';
+  document.getElementById('pedidoSidebar').style.display = 'block';
+  document.getElementById('articulosContainer').innerHTML = '<div class="loading"><div class="spinner"></div> Cargando artículos...</div>';
+  document.getElementById('articulosInfo').textContent = '';
+
+  const archivos = DEP_ARCHIVOS[dep] || [];
+  todosArticulos = [];
+
+  for (const arch of archivos) {
+    try {
+      const res = await fetch(`${GITHUB_RAW}${arch}`);
+      if (res.ok) {
+        const data = await res.json();
+        const validos = data.filter(a => a && a.id && a.referencia);
+        todosArticulos.push(...validos);
+      }
+    } catch(e) { console.warn('Error cargando', arch, e); }
+  }
+
+  // Eliminar duplicados por id
+  const seen = new Set();
+  todosArticulos = todosArticulos.filter(a => {
+    if (seen.has(a.id)) return false;
+    seen.add(a.id); return true;
+  });
+
+  filtrarArticulos();
+}
+
+// ══════════════════════════════════════════════════════════════
+// FILTRAR Y RENDERIZAR ARTÍCULOS
+// ══════════════════════════════════════════════════════════════
+function filtrarArticulos() {
+  const q = document.getElementById('buscadorInput').value.toLowerCase();
+  articulosFiltrados = q
+    ? todosArticulos.filter(a =>
+        (a.referencia||'').toLowerCase().includes(q) ||
+        (a.fabricante||'').toLowerCase().includes(q) ||
+        (a.dali||'').toLowerCase().includes(q) ||
+        (a.sap||'').toLowerCase().includes(q) ||
+        (a.codigo_fabrica||'').toLowerCase().includes(q)
+      )
+    : [...todosArticulos];
+
+  document.getElementById('articulosInfo').textContent =
+    `${articulosFiltrados.length} artículos${q ? ` para "${q}"` : ''}`;
+  renderizarArticulos();
+}
+
+function limpiarBusqueda() {
+  document.getElementById('buscadorInput').value = '';
+  filtrarArticulos();
+}
+
+function renderizarArticulos() {
+  const container = document.getElementById('articulosContainer');
+  if (!articulosFiltrados.length) {
+    container.innerHTML = '<div class="empty-state"><div class="icon">🔍</div><p>No se encontraron artículos</p></div>';
+    return;
+  }
+
+  let html = `<table class="articulos-tabla">
+    <thead><tr>
+      <th style="width:60px">Img</th>
+      <th>DALI</th>
+      <th>SAP</th>
+      <th>Referencia</th>
+      <th>Fabricante</th>
+      <th>Cód. Fábrica</th>
+      <th>Casa Delfín</th>
+      <th>PILSA</th>
+      <th style="width:80px">Cantidad</th>
+    </tr></thead><tbody>`;
+
+  articulosFiltrados.forEach(a => {
+    const cant = pedidoActual[a.id] || '';
+    const tieneCant = cant > 0;
+    const imgUrl = `${GITHUB_RAW}${a.dali}.jpg`;
+    html += `<tr>
+      <td><img class="art-img" src="${imgUrl}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
+          <div class="art-img-placeholder" style="display:none">📦</div></td>
+      <td><strong>${a.dali||'-'}</strong></td>
+      <td>${a.sap||'-'}</td>
+      <td>${a.referencia||'-'}</td>
+      <td>${a.fabricante||'-'}</td>
+      <td>${a.codigo_fabrica||'-'}</td>
+      <td><span class="badge ${a.proveedor_casa_delfin==='SI'?'badge-si':'badge-no'}">${a.proveedor_casa_delfin||'NO'}</span></td>
+      <td><span class="badge ${a.proveedor_pilsa==='SI'?'badge-si':'badge-no'}">${a.proveedor_pilsa||'NO'}</span></td>
+      <td><input class="cant-input ${tieneCant?'tiene-valor':''}" type="number" min="0"
+          value="${cant||''}" placeholder="0"
+          onchange="actualizarCantidad('${a.id}', this.value, '${(a.referencia||'').replace(/'/g,"\\'")}', this)"
+          oninput="this.className='cant-input'+(this.value>0?' tiene-valor':'')"></td>
+    </tr>`;
+  });
+
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+// ══════════════════════════════════════════════════════════════
+// PEDIDO
+// ══════════════════════════════════════════════════════════════
+function actualizarCantidad(id, valor, ref, input) {
+  const cant = parseInt(valor) || 0;
+  if (cant > 0) {
+    pedidoActual[id] = { cantidad: cant, referencia: ref };
+  } else {
+    delete pedidoActual[id];
+  }
+  actualizarSidebar();
+}
+
+function actualizarSidebar() {
+  const items = Object.entries(pedidoActual);
+  const badge = document.getElementById('pedidoBadge');
+  const totalEl = document.getElementById('pedidoTotal');
+  const btnEnviar = document.getElementById('btnEnviarPedido');
+  const itemsEl = document.getElementById('pedidoItems');
+
+  badge.textContent = items.length;
+  const totalUds = items.reduce((s, [, v]) => s + (v.cantidad||0), 0);
+  totalEl.textContent = `${totalUds} uds.`;
+  btnEnviar.disabled = items.length === 0;
+
+  if (!items.length) {
+    itemsEl.innerHTML = '<div class="pedido-vacio">Sin artículos aún</div>';
+    return;
+  }
+
+  itemsEl.innerHTML = items.map(([id, v]) =>
+    `<div class="pedido-item">
+      <span class="pedido-item-nombre">${v.referencia}</span>
+      <span class="pedido-item-cant">×${v.cantidad}</span>
+    </div>`
+  ).join('');
+}
+
+function limpiarPedido() {
+  pedidoActual = {};
+  actualizarSidebar();
+  renderizarArticulos();
+}
+
+async function enviarPedido() {
+  const items = Object.entries(pedidoActual);
+  if (!items.length) { mostrarToast('El pedido está vacío', 'error'); return; }
+
+  const btn = document.getElementById('btnEnviarPedido');
+  btn.disabled = true;
+  btn.textContent = 'Guardando...';
+
+  const articulosGuardar = items.map(([id, v]) => {
+    const art = todosArticulos.find(a => String(a.id) === String(id));
+    return {
+      id, dali: art?.dali, sap: art?.sap,
+      referencia: art?.referencia, fabricante: art?.fabricante,
+      cantidad: v.cantidad
+    };
+  });
+
+  try {
+    await supaFetch('pedidos', {
+      method: 'POST',
+      body: JSON.stringify({
+        hotel: sesion.hotel,
+        departamento: depSeleccionada || sesion.departamento,
+        nombre: sesion.nombre,
+        apellido: sesion.apellido,
+        articulos: articulosGuardar,
+        estado: 'pendiente'
+      })
+    });
+    mostrarToast('✅ Pedido guardado correctamente', 'exito');
+    limpiarPedido();
+    btn.textContent = 'Enviar Pedido';
+  } catch(e) {
+    mostrarToast('Error al guardar el pedido', 'error');
+    console.error(e);
+    btn.disabled = false;
+    btn.textContent = 'Enviar Pedido';
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// MIS PEDIDOS
+// ══════════════════════════════════════════════════════════════
+async function cargarMisPedidos() {
+  const container = document.getElementById('misPedidosContainer');
+  container.innerHTML = '<div class="loading"><div class="spinner"></div> Cargando...</div>';
+
+  let query = `pedidos?nombre=eq.${encodeURIComponent(sesion.nombre)}&apellido=eq.${encodeURIComponent(sesion.apellido)}&hotel=eq.${encodeURIComponent(sesion.hotel)}&order=created_at.desc`;
+
+  const estado = document.getElementById('filtroEstado').value;
+  if (estado) query += `&estado=eq.${estado}`;
+
+  const desde = document.getElementById('filtroFechaDesde').value;
+  if (desde) query += `&created_at=gte.${desde}`;
+  const hasta = document.getElementById('filtroFechaHasta').value;
+  if (hasta) query += `&created_at=lte.${hasta}T23:59:59`;
+
+  try {
+    const pedidos = await supaFetch(query);
+    renderizarPedidos(pedidos, container, false);
+  } catch(e) {
+    container.innerHTML = '<div class="empty-state"><div class="icon">❌</div><p>Error al cargar pedidos</p></div>';
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// ADMIN PEDIDOS
+// ══════════════════════════════════════════════════════════════
+async function cargarAdminPedidos() {
+  const container = document.getElementById('adminPedidosContainer');
+  container.innerHTML = '<div class="loading"><div class="spinner"></div> Cargando...</div>';
+
+  let query = 'pedidos?order=created_at.desc';
+  const hotel = document.getElementById('adminFiltroHotel').value;
+  if (hotel) query += `&hotel=eq.${encodeURIComponent(hotel)}`;
+  const dep = document.getElementById('adminFiltroDep').value;
+  if (dep) query += `&departamento=eq.${encodeURIComponent(dep)}`;
+  const estado = document.getElementById('adminFiltroEstado').value;
+  if (estado) query += `&estado=eq.${estado}`;
+  const desde = document.getElementById('adminFiltroDesde').value;
+  if (desde) query += `&created_at=gte.${desde}`;
+  const hasta = document.getElementById('adminFiltroHasta').value;
+  if (hasta) query += `&created_at=lte.${hasta}T23:59:59`;
+
+  try {
+    const pedidos = await supaFetch(query);
+    renderizarStats(pedidos);
+    renderizarPedidos(pedidos, container, true);
+  } catch(e) {
+    container.innerHTML = '<div class="empty-state"><div class="icon">❌</div><p>Error al cargar pedidos</p></div>';
+  }
+}
+
+function renderizarStats(pedidos) {
+  const stats = document.getElementById('adminStats');
+  const total = pedidos.length;
+  const pendientes = pedidos.filter(p => p.estado === 'pendiente').length;
+  const procesados = pedidos.filter(p => p.estado === 'procesado').length;
+  const uds = pedidos.reduce((s, p) => s + (p.articulos||[]).reduce((ss, a) => ss + (a.cantidad||0), 0), 0);
+
+  stats.innerHTML = [
+    ['📋', 'Total pedidos', total, '#5C3D1E'],
+    ['⏳', 'Pendientes', pendientes, '#856404'],
+    ['✅', 'Procesados', procesados, '#155724'],
+    ['📦', 'Total unidades', uds, '#1a1a1a']
+  ].map(([icon, label, val, color]) => `
+    <div style="background:#fff;border-radius:10px;padding:16px 20px;border:1.5px solid var(--beige-mid);min-width:140px;box-shadow:var(--sombra)">
+      <div style="font-size:20px">${icon}</div>
+      <div style="font-size:22px;font-weight:700;color:${color};margin:4px 0">${val}</div>
+      <div style="font-size:12px;color:var(--texto-suave)">${label}</div>
+    </div>
+  `).join('');
+}
+
+function renderizarPedidos(pedidos, container, isAdmin) {
+  if (!pedidos.length) {
+    container.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>No hay pedidos</p></div>';
+    return;
+  }
+
+  container.innerHTML = '<div class="pedidos-lista">' + pedidos.map(p => {
+    const fecha = new Date(p.created_at).toLocaleString('es-ES');
+    const arts = (p.articulos||[]);
+    const totalUds = arts.reduce((s, a) => s + (a.cantidad||0), 0);
+    const resumen = arts.slice(0, 3).map(a => `${a.referencia} ×${a.cantidad}`).join(' · ');
+    const masArts = arts.length > 3 ? ` · +${arts.length - 3} más` : '';
+
+    return `<div class="pedido-card">
+      <div>
+        <div class="pedido-card-titulo">${p.hotel} · ${p.departamento}</div>
+        <div class="pedido-card-meta">${p.nombre} ${p.apellido} · ${fecha}</div>
+        <div class="pedido-card-articulos">${resumen}${masArts}</div>
+        <div class="pedido-card-meta" style="margin-top:6px">${arts.length} artículos · ${totalUds} uds. totales</div>
+      </div>
+      <div class="pedido-card-acciones">
+        <span class="estado-badge estado-${p.estado}">${p.estado}</span>
+        ${isAdmin ? `
+          <select onchange="cambiarEstado('${p.id}', this.value)" style="padding:6px 10px;border:1.5px solid var(--beige-dark);border-radius:6px;font-size:12px;cursor:pointer">
+            <option ${p.estado==='pendiente'?'selected':''} value="pendiente">Pendiente</option>
+            <option ${p.estado==='procesado'?'selected':''} value="procesado">Procesado</option>
+            <option ${p.estado==='rechazado'?'selected':''} value="rechazado">Rechazado</option>
+          </select>
+          <button onclick="verDetallePedido('${p.id}')" style="padding:6px 12px;background:var(--marron);color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer">Ver detalle</button>
+        ` : `<button onclick="verDetallePedido('${p.id}')" style="padding:6px 12px;background:var(--marron);color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer">Ver detalle</button>`}
+      </div>
+    </div>`;
+  }).join('') + '</div>';
+}
+
+async function cambiarEstado(id, nuevoEstado) {
+  try {
+    await supaFetch(`pedidos?id=eq.${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ estado: nuevoEstado })
+    });
+    mostrarToast(`Estado actualizado: ${nuevoEstado}`, 'exito');
+    cargarAdminPedidos();
+  } catch(e) {
+    mostrarToast('Error al cambiar estado', 'error');
+  }
+}
+
+function verDetallePedido(id) {
+  // Buscar en el DOM actual — simplificado
+  mostrarToast('Función detalle próximamente', '');
+}
+
+// ══════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════
+document.getElementById('adminPass').addEventListener('keydown', e => {
+  if (e.key === 'Enter') verificarAdmin();
+});
+</script>
+</body>
+</html>
